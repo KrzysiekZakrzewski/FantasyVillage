@@ -104,14 +104,23 @@ namespace BlueRacconGames.Inventory
 
         private void OnSlotClicked(InventorySlot clickedSlot)
         {
-            if(selectedSlot == clickedSlot) return;
+            if(clickedSlot == null) return;
+
+            if(selectedSlot == clickedSlot)
+            {
+                selectedSlot.ResetPosition();
+                selectedSlot = null;
+
+                return;
+            }
 
             if (clickedSlot.IsFree)
             {
                 if (selectedSlot == null)
                     return;
 
-                selectedSlot.ChangeSlot(clickedSlot);
+                clickedSlot.AddItem(selectedSlot.InventoryItem);
+                selectedSlot.ClearSlot();
 
                 selectedSlot.Deselect();
                 selectedSlot = null;
@@ -119,8 +128,20 @@ namespace BlueRacconGames.Inventory
                 return;
             }
 
-            selectedSlot = clickedSlot;
-            selectedSlot.Select();
+            if(selectedSlot == null)
+            {
+                selectedSlot = clickedSlot;
+                selectedSlot.Select();
+
+                return;
+            }
+
+            if(selectedSlot.InventoryItem.Item != clickedSlot.InventoryItem.Item)
+            {
+                selectedSlot.ChangeSlot(clickedSlot);
+
+                selectedSlot.Select();
+            }
         }
 
         private void SlotMovable()

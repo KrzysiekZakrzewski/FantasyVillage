@@ -7,7 +7,7 @@ using UnityEngine.UI;
 
 namespace BlueRacconGames.Inventory
 {
-    public class InventorySlot : MonoBehaviour, IEndDragHandler, 
+    public class InventorySlot : MonoBehaviour, 
         IPointerEnterHandler, IPointerExitHandler, IPointerClickHandler
     {
         [SerializeField]
@@ -31,7 +31,7 @@ namespace BlueRacconGames.Inventory
 
         public void AddItem(InventoryItem newInventoryItem)
         {
-            itemIcon.transform.localPosition = Vector3.zero;
+            ResetPosition();
             InventoryItem = newInventoryItem;
             itemIcon.sprite = InventoryItem.Item.Icon;
             itemIcon.enabled = true;
@@ -46,13 +46,19 @@ namespace BlueRacconGames.Inventory
             itemIcon.sprite = null;
             itemIcon.enabled = false;
             countTxt.text = "";
-            itemIcon.transform.localPosition = Vector3.zero;
+
+            ResetPosition();
         }
 
         public void ChangeSlot(InventorySlot newSlot)
         {
+            var cacheItem = newSlot.InventoryItem;
+
+            newSlot.ClearSlot();
             newSlot.AddItem(InventoryItem);
+
             ClearSlot();
+            AddItem(cacheItem);
         }
 
         public void Move(Vector2 position)
@@ -60,21 +66,6 @@ namespace BlueRacconGames.Inventory
             if (IsFree) return;
 
             itemIcon.transform.position = position;
-        }
-
-        public void OnEndDrag(PointerEventData eventData)
-        {
-            itemIcon.raycastTarget = true;
-
-            var pointerGO = eventData.pointerCurrentRaycast.gameObject;
-
-            if (pointerGO == null || pointerGO == gameObject || !pointerGO.TryGetComponent<InventorySlot>(out var selectedSlot))
-            {
-                itemIcon.transform.localPosition = Vector3.zero;
-                return;
-            }
-
-            ChangeSlot(selectedSlot);
         }
 
         public void OnPointerEnter(PointerEventData eventData)
@@ -94,12 +85,20 @@ namespace BlueRacconGames.Inventory
 
         public void Select()
         {
+            itemIcon.transform.SetParent(transform.root);
             itemIcon.raycastTarget = false;
         }
 
         public void Deselect()
         {
+            itemIcon.transform.SetParent(transform);
             itemIcon.raycastTarget = true;
+        }
+
+        public void ResetPosition()
+        {
+            Deselect();
+            itemIcon.transform.localPosition = Vector3.zero;
         }
     }
 }
