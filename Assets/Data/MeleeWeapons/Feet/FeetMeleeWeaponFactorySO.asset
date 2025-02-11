@@ -1,0 +1,21 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4e3102d09d6315046884a9f440196c87, type: 3}
+  m_Name: FeetMeleeWeaponFactorySO
+  m_EditorClassIdentifier: 
+  <Id>k__BackingField: 0
+  <Name>k__BackingField: Feet
+  <Description>k__BackingField: Stupkiiii
+  <Icon>k__BackingField: {fileID: 0}
+  <MeleeWeaponTargetEffectFactory>k__BackingField:
+  - {fileID: 11400000, guid: 007bcbde3f66a994a8d88dee72b6feb0, type: 2}
+  - {fileID: 11400000, guid: 6daa99939cdfb004dba820a5be57edce, type: 2}
