@@ -10,48 +10,49 @@ namespace BlueRacconGames.Inventory
 {
     public class InventoryUI : SingleViewTypeStackController
     {
-        [SerializeField]
-        private MainInventoryView mainInventoryView;
-        [SerializeField]
-        private InventorySlot[] slots;
+        [SerializeField] private MainInventoryView mainInventoryView;
+        [SerializeField] private ChestInventoryView chestInventoryView;
 
-        [NonSerialized]
-        protected Inputs.PlayerInput playerInput;
+        [NonSerialized] protected Inputs.PlayerInput playerInput;
 
         private InventorySlot selectedSlot;
-        private InventoryManager inventory;
+        private InventoryManager inventoryManager;
+
+        public event Action OnInventoryUIOpenedE;
+        public event Action OnInventoryUIClosedE;
 
         public bool IsMainInventoryOpen => mainInventoryView.gameObject.activeSelf;
+        public bool IsChestInventoryOpen => chestInventoryView.gameObject.activeSelf;
 
         [Inject]
-        private void Inject(InventoryManager inventory)
+        private void Inject(InventoryManager inventoryManager)
         {
-            this.inventory = inventory;
+            this.inventoryManager = inventoryManager;
         }
-        
+
         protected override void Awake()
         {
             base.Awake();
 
             playerInput = InputManager.GetPlayer(0);
 
+            mainInventoryView.Initialize(this);
+            chestInventoryView.Initialize(this);
+
+            chestInventoryView.OnChestInventoryOpenedE += UpdateUI;
+            //chestInventoryView.OnChestInventoryClosedE += UpdateUI;
+
             SetupInputs();
-
-            inventory.OnItemChangedE += UpdateUI;
-
-            for (int i = 0; i < slots.Length; i++) 
-            {
-                slots[i].OnSlotClickE += OnSlotClicked;
-            }
         }
 
         protected override void OnDestroy()
         {
             base.OnDestroy();
 
-            inventory.OnItemChangedE -= UpdateUI;
-
             RemoveInputs();
+
+            chestInventoryView.OnChestInventoryOpenedE -= UpdateUI;
+            //chestInventoryView.OnChestInventoryClosedE += UpdateUI;
         }
 
         private void Update()
@@ -59,22 +60,82 @@ namespace BlueRacconGames.Inventory
             SlotMovable();   
         }
 
+        public void OpenMainInventory()
+        {
+            if (IsMainInventoryOpen) return;
+
+            TryOpenSafe<MainInventoryView>();
+            OnInventoryUIOpenedE?.Invoke();
+        }
+
+        public void OpenChestInventory()
+        {
+            if (IsChestInventoryOpen) return;
+
+            OpenMainInventory();
+
+            mainInventoryView.ParentStack.Push(chestInventoryView);
+        }
+
+        public void CloseInventory()
+        {
+            Clear();
+            OnInventoryUIClosedE?.Invoke();
+        }
+
+        public void OnSlotClicked(InventorySlot clickedSlot)
+        {
+            if (clickedSlot == null) return;
+
+            if (selectedSlot == clickedSlot)
+            {
+                selectedSlot.ResetPosition();
+                selectedSlot = null;
+
+                return;
+            }
+
+            if (clickedSlot.IsFree && selectedSlot != null)
+            {
+                clickedSlot.AddItem(selectedSlot.InventoryItem);
+                selectedSlot.ClearSlot();
+
+                selectedSlot.Deselect();
+                selectedSlot = null;
+
+                return;
+            }
+
+            if (selectedSlot == null)
+            {
+                selectedSlot = clickedSlot;
+                selectedSlot.Select();
+                return;
+            }
+
+            if (selectedSlot.InventoryItem.Item != clickedSlot.InventoryItem.Item)
+            {
+                selectedSlot.ChangeSlot(clickedSlot);
+
+                selectedSlot.Select();
+            }
+        }
+
+        public void UpdateUI()
+        {
+            if (IsMainInventoryOpen)
+                mainInventoryView.UpdateUI(inventoryManager);
+
+            if (IsChestInventoryOpen)
+                chestInventoryView.UpdateUI(inventoryManager);
+        }
+
         private void ChangeMainInventoryState(InputAction.CallbackContext callback)
         {
             if(IsMainInventoryOpen)
-                CloseMainInventory();
+                CloseInventory();
             else
                 OpenMainInventory();
-        }
-
-        private void OpenMainInventory()
-        {
-            TryOpenSafe<MainInventoryView>();
-        }
-
-        private void CloseMainInventory()
-        {
-            TryPopSafe();
         }
 
         private void SetupInputs()
@@ -85,63 +146,6 @@ namespace BlueRacconGames.Inventory
         private void RemoveInputs()
         {
             playerInput.RemoveInputEventDelegate(ChangeMainInventoryState);
-        }
-
-        private void UpdateUI()
-        {
-            for (int i = 0; i < slots.Length; i++) 
-            { 
-                if(i < inventory.Items.Count)
-                {
-                    slots[i].AddItem(inventory.Items[i]);
-                }
-                else
-                {
-                    slots[i].ClearSlot();
-                }
-            }
-        }
-
-        private void OnSlotClicked(InventorySlot clickedSlot)
-        {
-            if(clickedSlot == null) return;
-
-            if(selectedSlot == clickedSlot)
-            {
-                selectedSlot.ResetPosition();
-                selectedSlot = null;
-
-                return;
-            }
-
-            if (clickedSlot.IsFree)
-            {
-                if (selectedSlot == null)
-                    return;
-
-                clickedSlot.AddItem(selectedSlot.InventoryItem);
-                selectedSlot.ClearSlot();
-
-                selectedSlot.Deselect();
-                selectedSlot = null;
-
-                return;
-            }
-
-            if(selectedSlot == null)
-            {
-                selectedSlot = clickedSlot;
-                selectedSlot.Select();
-
-                return;
-            }
-
-            if(selectedSlot.InventoryItem.Item != clickedSlot.InventoryItem.Item)
-            {
-                selectedSlot.ChangeSlot(clickedSlot);
-
-                selectedSlot.Select();
-            }
         }
 
         private void SlotMovable()

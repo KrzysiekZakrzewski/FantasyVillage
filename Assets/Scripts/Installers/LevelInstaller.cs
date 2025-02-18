@@ -8,10 +8,13 @@ namespace Game.Installer
     {
         [SerializeField]
         private InventoryManager inventory;
+        [SerializeField]
+        private InventoryUI inventoryUI;
 
         public override void InstallBindings()
         {
             Container.BindInstance(inventory).AsSingle();
+            Container.BindInstance(inventoryUI).AsSingle();
         }
     }
 }

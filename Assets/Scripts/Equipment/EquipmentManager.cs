@@ -35,7 +35,7 @@ namespace BlueRacconGames.Equipment
             if (currentEquipment[slotIndex] != null) 
             {
                 oldItem = currentEquipment[slotIndex];
-                inventory.Add(oldItem);
+                inventory.AddItem(oldItem);
             }
 
             OnEquipmentChanged?.Invoke(newItem, oldItem);
@@ -48,7 +48,7 @@ namespace BlueRacconGames.Equipment
             if (currentEquipment[slotIndex] == null) return;
 
             EquipmentFactorySO oldItem = currentEquipment[slotIndex];
-            inventory.Add(oldItem);
+            inventory.AddItem(oldItem);
 
             OnEquipmentChanged?.Invoke(null, oldItem);
 

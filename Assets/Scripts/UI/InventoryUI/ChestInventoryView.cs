@@ -1,4 +1,5 @@
-using BlueRacconGames.Inventory;
+﻿using BlueRacconGames.Inventory;
+using Game.Item.Factory;
 using System;
 using UnityEngine;
 using ViewSystem;
@@ -6,28 +7,29 @@ using ViewSystem.Implementation;
 
 namespace Game.View
 {
-    public class MainInventoryView : BasicView
+    public class ChestInventoryView : BasicView
     {
         [SerializeField]
         private InventorySlot[] slots;
 
-        public event Action OnInventoryOpenedE;
-        public event Action OnInventoryClosedE;
+        public event Action OnChestInventoryOpenedE;
+        public event Action OnChestInventoryClosedE;
 
         public override bool Absolute => false;
+        public override bool IsPopup => true;
 
         public override void NavigateTo(IAmViewStackItem previousViewStackItem)
         {
             base.NavigateTo(previousViewStackItem);
 
-            OnInventoryOpenedE?.Invoke();
+            OnChestInventoryOpenedE?.Invoke();
         }
 
         public override void NavigateFrom(IAmViewStackItem nextViewStackItem)
         {
             base.NavigateFrom(nextViewStackItem);
 
-            OnInventoryClosedE?.Invoke();
+            OnChestInventoryClosedE?.Invoke();
         }
 
         public void Initialize(InventoryUI inventoryUI)
@@ -42,9 +44,9 @@ namespace Game.View
         {
             for (int i = 0; i < slots.Length; i++)
             {
-                if (i < inventory.Items.Count)
+                if (i < inventory.OpenedChestItems.Count)
                 {
-                    slots[i].AddItem(inventory.Items[i]);
+                    slots[i].AddItem(inventory.OpenedChestItems[i]);
                 }
                 else
                 {
