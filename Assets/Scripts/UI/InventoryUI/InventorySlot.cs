@@ -19,29 +19,46 @@ namespace BlueRacconGames.Inventory
         [SerializeField]
         private Color normalColor, highlightedColor;
 
-        public InventoryItem InventoryItem {  get; private set; }
+        public int SlotCount { get; private set; }
+        //public InventoryItem InventoryItem {  get; private set; }
         public event Action<InventorySlot> OnSlotClickE;
 
-        public bool IsFree => !itemIcon.enabled; 
+        public bool IsFree => !itemIcon.enabled;
+        public bool IsMainInventorySlot { get; private set; } = true;
+        public int Id { get; private set; }
 
         private void Awake()
         {
             ClearSlot();
         }
 
+        public void Initialize(Action<InventorySlot> OnSlotClickedAction, int slotId, bool isMainInventorySlot = true)
+        {
+            OnSlotClickE += OnSlotClickedAction;
+            IsMainInventorySlot = isMainInventorySlot;
+            Id = slotId;
+        }
+
         public void AddItem(InventoryItem newInventoryItem)
         {
             ResetPosition();
-            InventoryItem = newInventoryItem;
-            itemIcon.sprite = InventoryItem.Item.Icon;
+            //InventoryItem = newInventoryItem;
+            itemIcon.sprite = newInventoryItem.Item.Icon;
             itemIcon.enabled = true;
 
-            countTxt.text = newInventoryItem.Count > 1 ? newInventoryItem.Count.ToString() : "";
+            CountUpdate(newInventoryItem.Count);
+        }
+
+        public void CountUpdate(int newCount)
+        {
+            SlotCount = newCount;
+
+            countTxt.text = SlotCount > 1 ? SlotCount.ToString() : "";
         }
 
         public void ClearSlot()
         {
-            InventoryItem = null;
+            //InventoryItem = null;
 
             itemIcon.sprite = null;
             itemIcon.enabled = false;

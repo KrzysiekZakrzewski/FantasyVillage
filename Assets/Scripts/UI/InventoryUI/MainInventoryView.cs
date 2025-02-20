@@ -1,56 +1,7 @@
-using BlueRacconGames.Inventory;
-using System;
-using UnityEngine;
-using ViewSystem;
-using ViewSystem.Implementation;
-
 namespace Game.View
 {
-    public class MainInventoryView : BasicView
+    public class MainInventoryView : InventoryView
     {
-        [SerializeField]
-        private InventorySlot[] slots;
-
-        public event Action OnInventoryOpenedE;
-        public event Action OnInventoryClosedE;
-
         public override bool Absolute => false;
-
-        public override void NavigateTo(IAmViewStackItem previousViewStackItem)
-        {
-            base.NavigateTo(previousViewStackItem);
-
-            OnInventoryOpenedE?.Invoke();
-        }
-
-        public override void NavigateFrom(IAmViewStackItem nextViewStackItem)
-        {
-            base.NavigateFrom(nextViewStackItem);
-
-            OnInventoryClosedE?.Invoke();
-        }
-
-        public void Initialize(InventoryUI inventoryUI)
-        {
-            for (int i = 0; i < slots.Length; i++)
-            {
-                slots[i].OnSlotClickE += inventoryUI.OnSlotClicked;
-            }
-        }
-
-        public void UpdateUI(InventoryManager inventory)
-        {
-            for (int i = 0; i < slots.Length; i++)
-            {
-                if (i < inventory.Items.Count)
-                {
-                    slots[i].AddItem(inventory.Items[i]);
-                }
-                else
-                {
-                    slots[i].ClearSlot();
-                }
-            }
-        }
     }
 }

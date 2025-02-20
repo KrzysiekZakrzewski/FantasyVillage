@@ -179,7 +179,7 @@ BoxCollider2D:
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
-  m_Offset: {x: -0.0015096664, y: 0.061596036}
+  m_Offset: {x: -0.0015096664, y: 0.031033948}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -189,7 +189,7 @@ BoxCollider2D:
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
-  m_Size: {x: 0.8882704, y: 0.7530892}
+  m_Size: {x: 0.8882704, y: 0.8142134}
   m_EdgeRadius: 0
 --- !u!114 &6271035298125005574
 MonoBehaviour:
@@ -206,8 +206,8 @@ MonoBehaviour:
   interactionPrompt: E
   autoInteractable: 0
   promptPosition: {fileID: 431364639975293059}
-  item: {fileID: 0}
   animator: {fileID: 9214324013666340796}
+  <Items>k__BackingField: []
 --- !u!1 &7185096030607619451
 GameObject:
   m_ObjectHideFlags: 0

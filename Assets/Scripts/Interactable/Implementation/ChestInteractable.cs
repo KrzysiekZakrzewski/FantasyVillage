@@ -2,7 +2,6 @@ using BlueRacconGames.Animation;
 using BlueRacconGames.Inventory;
 using Game.Item.Factory;
 using System.Collections.Generic;
-using System.Linq;
 using UnityEngine;
 using Zenject;
 
@@ -21,17 +20,10 @@ namespace Interactable.Implementation
 
         private InventoryManager inventoryManager;
 
-        public ChestStatusResult ChestStatus { get; private set; }
-
         [Inject]
         private void Inject(InventoryManager inventoryManager)
         {
             this.inventoryManager = inventoryManager;
-        }
-
-        private void Awake()
-        {
-            CheckChestStatus();
         }
 
         public override bool Interact(InteractorControllerBase interactor)
@@ -48,14 +40,14 @@ namespace Interactable.Implementation
 
         }
 
-        public void AddItem(ItemFactorySO item)
+        public bool AddItem(ItemFactorySO item, int count = 1)
         {
-
+            return true;
         }
 
-        public void RemoveItem(ItemFactorySO item)
+        public bool Remove(ItemFactorySO item, int count = 1)
         {
-
+            return true;
         }
 
         public void Open()
@@ -75,39 +67,5 @@ namespace Interactable.Implementation
 
             isOpened = false;
         }
-
-        private void CheckChestStatus()
-        {
-            ChestStatus = Items.Count == 0 ? ChestStatusResult.Free : ChestStatusResult.WithItems;
-
-            if (ChestStatus == ChestStatusResult.Free)
-                return;
-
-            ChestStatus = Items.Count <= inventoryManager.ChestInventorySpace ? ChestStatusResult.WithItems : ChestStatusResult.Overload;
-
-            if (ChestStatus == ChestStatusResult.WithItems)
-                return;
-
-            FixChestSpace();
-        }
-
-        private void FixChestSpace()
-        {
-            if(ChestStatus != ChestStatusResult.Overload)
-                return;
-
-            var itemsCount = Items.Count;
-
-            Items.RemoveRange(inventoryManager.ChestInventorySpace, itemsCount);
-
-            ChestStatus = ChestStatusResult.WithItems;
-        }
-    }
-
-    public enum ChestStatusResult
-    {
-        Free,
-        WithItems,
-        Overload
     }
 }

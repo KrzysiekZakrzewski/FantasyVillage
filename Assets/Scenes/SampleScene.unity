@@ -3460,6 +3460,26 @@ PrefabInstance:
       value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 6271035298125005574, guid: b5ca77fb5c38d8b4a9d0f781f3703887, type: 3}
+      propertyPath: <Items>k__BackingField.list.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6271035298125005574, guid: b5ca77fb5c38d8b4a9d0f781f3703887, type: 3}
+      propertyPath: <Items>k__BackingField.Array.data[0].Count
+      value: 60
+      objectReference: {fileID: 0}
+    - target: {fileID: 6271035298125005574, guid: b5ca77fb5c38d8b4a9d0f781f3703887, type: 3}
+      propertyPath: <Items>k__BackingField.Array.data[1].Count
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 6271035298125005574, guid: b5ca77fb5c38d8b4a9d0f781f3703887, type: 3}
+      propertyPath: <Items>k__BackingField.list.Array.data[0].key
+      value: 
+      objectReference: {fileID: 11400000, guid: 0b20894f40d8eca429394d41151b6857, type: 2}
+    - target: {fileID: 6271035298125005574, guid: b5ca77fb5c38d8b4a9d0f781f3703887, type: 3}
+      propertyPath: <Items>k__BackingField.list.Array.data[0].value.Count
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 6271035298125005574, guid: b5ca77fb5c38d8b4a9d0f781f3703887, type: 3}
       propertyPath: <Items>k__BackingField.Array.data[0].<Item>k__BackingField
       value: 
       objectReference: {fileID: 11400000, guid: 0b20894f40d8eca429394d41151b6857, type: 2}
@@ -3475,6 +3495,10 @@ PrefabInstance:
       propertyPath: <Items>k__BackingField.Array.data[1].<Count>k__BackingField
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 6271035298125005574, guid: b5ca77fb5c38d8b4a9d0f781f3703887, type: 3}
+      propertyPath: <Items>k__BackingField.list.Array.data[0].value.<Item>k__BackingField
+      value: 
+      objectReference: {fileID: 11400000, guid: 0b20894f40d8eca429394d41151b6857, type: 2}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -8089,10 +8113,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 89ffe89f737c755469e214b505f3f72b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  CurrentChestOpened: {fileID: 0}
   <Items>k__BackingField:
+  - <Item>k__BackingField: {fileID: 11400000, guid: 0b20894f40d8eca429394d41151b6857, type: 2}
+    Count: 5
+  - <Item>k__BackingField: {fileID: 11400000, guid: a7e80a602fff8a54b809501efdf30181, type: 2}
+    Count: 6
   - <Item>k__BackingField: {fileID: 11400000, guid: 089d4d1c25a2c4745a2251488663084e, type: 2}
-    <Count>k__BackingField: 1
+    Count: 4
+  CurrentChestOpened: {fileID: 0}
 --- !u!1001 &2000461705
 PrefabInstance:
   m_ObjectHideFlags: 0

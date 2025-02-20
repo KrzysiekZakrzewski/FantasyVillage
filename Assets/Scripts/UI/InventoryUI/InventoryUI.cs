@@ -39,10 +39,12 @@ namespace BlueRacconGames.Inventory
             mainInventoryView.Initialize(this);
             chestInventoryView.Initialize(this);
 
-            chestInventoryView.OnChestInventoryOpenedE += UpdateUI;
+            chestInventoryView.OnInventoryOpenedE += UpdateUI;
             //chestInventoryView.OnChestInventoryClosedE += UpdateUI;
 
             SetupInputs();
+
+            UpdateUI();
         }
 
         protected override void OnDestroy()
@@ -51,7 +53,7 @@ namespace BlueRacconGames.Inventory
 
             RemoveInputs();
 
-            chestInventoryView.OnChestInventoryOpenedE -= UpdateUI;
+            chestInventoryView.OnInventoryOpenedE -= UpdateUI;
             //chestInventoryView.OnChestInventoryClosedE += UpdateUI;
         }
 
@@ -87,24 +89,7 @@ namespace BlueRacconGames.Inventory
         {
             if (clickedSlot == null) return;
 
-            if (selectedSlot == clickedSlot)
-            {
-                selectedSlot.ResetPosition();
-                selectedSlot = null;
-
-                return;
-            }
-
-            if (clickedSlot.IsFree && selectedSlot != null)
-            {
-                clickedSlot.AddItem(selectedSlot.InventoryItem);
-                selectedSlot.ClearSlot();
-
-                selectedSlot.Deselect();
-                selectedSlot = null;
-
-                return;
-            }
+            if (clickedSlot.IsFree && selectedSlot == null) return;
 
             if (selectedSlot == null)
             {
@@ -113,18 +98,25 @@ namespace BlueRacconGames.Inventory
                 return;
             }
 
-            if (selectedSlot.InventoryItem.Item != clickedSlot.InventoryItem.Item)
+            if (selectedSlot == clickedSlot)
             {
-                selectedSlot.ChangeSlot(clickedSlot);
+                selectedSlot.ResetPosition();
+                selectedSlot = null;
 
-                selectedSlot.Select();
+                return;
             }
+
+            inventoryManager.TryChangeSlotItem();
+        }
+
+        public int GetFirstFreeSlotId<InventoryView>()
+        {
+            return mainInventoryView.GetFirstFreeSlotId();
         }
 
         public void UpdateUI()
         {
-            if (IsMainInventoryOpen)
-                mainInventoryView.UpdateUI(inventoryManager);
+            mainInventoryView.UpdateUI(inventoryManager);
 
             if (IsChestInventoryOpen)
                 chestInventoryView.UpdateUI(inventoryManager);
