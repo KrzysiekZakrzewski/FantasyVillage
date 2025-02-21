@@ -6,7 +6,7 @@ using ViewSystem.Implementation;
 
 namespace Game.View
 {
-    public class InventoryView : BasicView
+    public abstract class InventoryView : BasicView
     {
         [SerializeField]
         protected InventorySlot[] slots;
@@ -16,13 +16,7 @@ namespace Game.View
         public event Action OnInventoryOpenedE;
         public event Action OnInventoryClosedE;
 
-        public void Initialize(InventoryUI inventoryUI)
-        {
-            for (int i = 0; i < slots.Length; i++)
-            {
-                slots[i].Initialize(inventoryUI.OnSlotClicked, i);
-            }
-        }
+        public abstract void Initialize(InventoryUI inventoryUI);
 
         public override void NavigateTo(IAmViewStackItem previousViewStackItem)
         {
@@ -42,14 +36,7 @@ namespace Game.View
         {
             for (int i = 0; i < slots.Length; i++)
             {
-                if (i < inventory.Items.Count)
-                {
-                    slots[i].AddItem(inventory.Items[i]);
-                }
-                else
-                {
-                    slots[i].ClearSlot();
-                }
+                slots[i].Refresh(inventory);
             }
         }
 

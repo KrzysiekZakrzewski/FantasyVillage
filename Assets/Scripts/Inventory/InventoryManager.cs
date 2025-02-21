@@ -31,9 +31,11 @@ namespace BlueRacconGames.Inventory
             {
                 Items[i].SetSlotId(i);
             }
+
+            inventoryUI.UpdateUI();
         }
 
-        public bool AddItem(ItemFactorySO item, int count = 1, int slotId = -1)
+        public bool AddItem(ItemFactorySO item, int count = 1)
         {
             if (item == null || count <= 0) return false;
 
@@ -53,6 +55,16 @@ namespace BlueRacconGames.Inventory
             return true;
         }
 
+        public bool AddItem(ItemFactorySO item, int count, int slotId)
+        {
+            if (item == null || count <= 0) return false;
+
+            Items.Add(new InventoryItem(item, slotId, count));
+            inventoryUI.UpdateUI();
+
+            return true;
+        }
+
         public bool RemoveItem(ItemFactorySO item, int count = 1) 
         {
             var inventoryItem = Items.Find(x => x.Item == item);
@@ -67,32 +79,118 @@ namespace BlueRacconGames.Inventory
             return true;
         }
 
+        public bool RemoveItemBySlot(int slotId)
+        {
+            var inventoryItem = Items.Find(x => x.SlotId == slotId);
+
+            if (inventoryItem == null) return false;
+
+            Items.Remove(inventoryItem);
+            return true;
+        }
+
         public InventoryItem GetItemBySlotId(int slotId)
         {
             return Items.Find(x => x.SlotId == slotId);
         }
-
-        public bool GetFromChest(InventoryItem inventoryItem)
+        public InventoryItem GetItemBySlotIdFromChest(int slotId)
         {
-            CurrentChestOpened.Remove(inventoryItem.Item, inventoryItem.Count);
-
-            AddItem(inventoryItem.Item, inventoryItem.Count);
-
-            return true;
+            return OpenedChestItems.Find(x => x.SlotId == slotId);
         }
 
-        public bool PutInChest(InventoryItem inventoryItem)
+        public void ChangeSlot(int oldSlotId, int newSlotId, InventorySlotType slotType)
         {
-            RemoveItem(inventoryItem.Item, inventoryItem.Count);
+            var selectedItem = slotType == InventorySlotType.Main 
+                ? GetItemBySlotId(oldSlotId) : GetItemBySlotIdFromChest(oldSlotId);
+            var clickedItem = slotType == InventorySlotType.Main
+                ? GetItemBySlotId(newSlotId) : GetItemBySlotIdFromChest(newSlotId);
 
-            CurrentChestOpened.AddItem(inventoryItem.Item, inventoryItem.Count);
+            if (clickedItem == null)
+            {
+                selectedItem.SetSlotId(newSlotId);
 
-            return true;
+                return;
+            }
+
+            if(selectedItem.Item == clickedItem.Item)
+            {
+                RemoveItemBySlot(oldSlotId);
+                AddItem(selectedItem.Item, selectedItem.Count);
+
+                return;
+            }
+
+            clickedItem.SetSlotId(oldSlotId);
         }
 
-        public void TryChangeSlotItem()
+        public void GetFromChest(int oldSlotId, int newSlotId)
         {
+            var selectedItem = GetItemBySlotIdFromChest(oldSlotId);
+            var clickedItem = GetItemBySlotId(newSlotId);
 
+            CurrentChestOpened.RemoveItemBySlot(oldSlotId);
+
+            if (clickedItem == null)
+            {
+                AddItem(selectedItem.Item, selectedItem.Count, newSlotId);
+                return;
+            }
+
+            if (selectedItem.Item == clickedItem.Item)
+            {
+                AddItem(selectedItem.Item, selectedItem.Count);
+
+                return;
+            }
+
+            RemoveItemBySlot(newSlotId);
+
+            AddItem(selectedItem.Item, selectedItem.Count, newSlotId);
+            CurrentChestOpened.AddItem(clickedItem.Item, clickedItem.Count, oldSlotId);
+        }
+
+        public void PutInChest(int oldSlotId, int newSlotId)
+        {
+            var selectedItem = GetItemBySlotId(oldSlotId);
+            var clickedItem = GetItemBySlotIdFromChest(newSlotId);
+
+            RemoveItemBySlot(oldSlotId);
+
+            if (clickedItem == null)
+            {
+                CurrentChestOpened.AddItem(selectedItem.Item, selectedItem.Count, newSlotId);
+
+                return;
+            }
+
+            if (selectedItem.Item == clickedItem.Item)
+            {
+                CurrentChestOpened.AddItem(selectedItem.Item, selectedItem.Count);
+
+                return;
+            }
+
+            CurrentChestOpened.RemoveItemBySlot(newSlotId);
+            CurrentChestOpened.AddItem(selectedItem.Item, selectedItem.Count, newSlotId);
+            AddItem(clickedItem.Item, clickedItem.Count, oldSlotId);
+        }
+
+        public void TryChangeSlotItem(InventorySlot selectedSlot, InventorySlot clickedSlot, ChangeSlotType changeSlotType)
+        {
+            switch (changeSlotType)
+            {
+                case ChangeSlotType.SameInventorySpace:
+                    ChangeSlot(selectedSlot.Id, clickedSlot.Id, selectedSlot.InventorySlotType);
+                    break;
+                case ChangeSlotType.ToMainSpace:
+                    GetFromChest(selectedSlot.Id, clickedSlot.Id);
+                    break;
+                case ChangeSlotType.ToChestSpace:
+                    PutInChest(selectedSlot.Id, clickedSlot.Id);
+                    break;
+                default:
+                    return;
+            }
         }
 
         public void OpenChestInventory(ChestInteractable chest)
@@ -132,9 +230,14 @@ namespace BlueRacconGames.Inventory
             SlotId = slotId;
         }
 
-        public void SetSlotId(int slotId)
-        {
-            SlotId = slotId;
-        }
+        public void SetSlotId(int slotId) => SlotId = slotId;
+    }
+
+    public enum ChangeSlotResult
+    {
+        Error,
+        EmptyPlace,
+        CountIncreased,
+        Swap
     }
 }

@@ -19,34 +19,52 @@ namespace BlueRacconGames.Inventory
         [SerializeField]
         private Color normalColor, highlightedColor;
 
-        public int SlotCount { get; private set; }
-        //public InventoryItem InventoryItem {  get; private set; }
         public event Action<InventorySlot> OnSlotClickE;
 
+        public int SlotCount { get; private set; }
         public bool IsFree => !itemIcon.enabled;
-        public bool IsMainInventorySlot { get; private set; } = true;
+        public InventorySlotType InventorySlotType { get; private set; } = InventorySlotType.Main;
         public int Id { get; private set; }
 
-        private void Awake()
-        {
-            ClearSlot();
-        }
+        public ValidStatus ValidStatus = ValidStatus.WaitForUpdate;
 
-        public void Initialize(Action<InventorySlot> OnSlotClickedAction, int slotId, bool isMainInventorySlot = true)
+        public void Initialize(Action<InventorySlot> OnSlotClickedAction, int slotId, InventorySlotType inventorySlotType = InventorySlotType.Main)
         {
             OnSlotClickE += OnSlotClickedAction;
-            IsMainInventorySlot = isMainInventorySlot;
+            InventorySlotType = inventorySlotType;
             Id = slotId;
+        }
+
+        public void Refresh(InventoryManager inventoryManager)
+        {
+            if (ValidStatus == ValidStatus.Valid) return;
+
+            var item = InventorySlotType == InventorySlotType.Main ? 
+                inventoryManager.GetItemBySlotId(Id) : inventoryManager.GetItemBySlotIdFromChest(Id);
+
+            ResetPosition();
+
+            ClearSlot();
+            if (item == null) return;
+
+            AddItem(item);
+
+            ValidStatus = ValidStatus.Valid;
         }
 
         public void AddItem(InventoryItem newInventoryItem)
         {
-            ResetPosition();
-            //InventoryItem = newInventoryItem;
             itemIcon.sprite = newInventoryItem.Item.Icon;
             itemIcon.enabled = true;
 
             CountUpdate(newInventoryItem.Count);
+        }
+
+        public void ClearSlot()
+        {
+            itemIcon.sprite = null;
+            itemIcon.enabled = false;
+            countTxt.text = "";
         }
 
         public void CountUpdate(int newCount)
@@ -54,28 +72,6 @@ namespace BlueRacconGames.Inventory
             SlotCount = newCount;
 
             countTxt.text = SlotCount > 1 ? SlotCount.ToString() : "";
-        }
-
-        public void ClearSlot()
-        {
-            //InventoryItem = null;
-
-            itemIcon.sprite = null;
-            itemIcon.enabled = false;
-            countTxt.text = "";
-
-            ResetPosition();
-        }
-
-        public void ChangeSlot(InventorySlot newSlot)
-        {
-            var cacheItem = newSlot.InventoryItem;
-
-            newSlot.ClearSlot();
-            newSlot.AddItem(InventoryItem);
-
-            ClearSlot();
-            AddItem(cacheItem);
         }
 
         public void Move(Vector2 position)
@@ -117,5 +113,17 @@ namespace BlueRacconGames.Inventory
             Deselect();
             itemIcon.transform.localPosition = Vector3.zero;
         }
+    }
+
+    public enum InventorySlotType
+    {
+        Main,
+        Chest
+    }
+
+    public enum ValidStatus
+    {
+        Valid,
+        WaitForUpdate
     }
 }

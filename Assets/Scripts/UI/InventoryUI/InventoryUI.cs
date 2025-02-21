@@ -40,11 +40,8 @@ namespace BlueRacconGames.Inventory
             chestInventoryView.Initialize(this);
 
             chestInventoryView.OnInventoryOpenedE += UpdateUI;
-            //chestInventoryView.OnChestInventoryClosedE += UpdateUI;
 
             SetupInputs();
-
-            UpdateUI();
         }
 
         protected override void OnDestroy()
@@ -106,7 +103,15 @@ namespace BlueRacconGames.Inventory
                 return;
             }
 
-            inventoryManager.TryChangeSlotItem();
+            var changeSlotType = CheckChangeSlotType(clickedSlot);
+
+            inventoryManager.TryChangeSlotItem(selectedSlot, clickedSlot, changeSlotType);
+
+            clickedSlot.ValidStatus = selectedSlot.ValidStatus = ValidStatus.WaitForUpdate;
+
+            selectedSlot = null;
+
+            UpdateUI();
         }
 
         public int GetFirstFreeSlotId<InventoryView>()
@@ -147,5 +152,46 @@ namespace BlueRacconGames.Inventory
 
             selectedSlot.Move(playerInput.GetCoordinates());
         }
+
+        private void SlotUpdate(ChangeSlotResult result)
+        {
+            switch (result)
+            {
+                case ChangeSlotResult.Error:
+                    Debug.LogError("Change Slot Error!!!");
+                    break;
+                case ChangeSlotResult.EmptyPlace:
+
+                    break;
+                case ChangeSlotResult.CountIncreased:
+
+                    break;
+                case ChangeSlotResult.Swap:
+
+                    break;
+            }
+
+
+            selectedSlot = null;
+        }
+        private ChangeSlotType CheckChangeSlotType(InventorySlot clickedSlot)
+        {
+            if (selectedSlot.InventorySlotType == clickedSlot.InventorySlotType)
+                return ChangeSlotType.SameInventorySpace;
+
+            return selectedSlot.InventorySlotType switch
+            {
+                InventorySlotType.Main => ChangeSlotType.ToChestSpace,
+                InventorySlotType.Chest => ChangeSlotType.ToMainSpace,
+                _ => ChangeSlotType.Error,
+            };
+        }
+    }
+    public enum ChangeSlotType
+    {
+        Error,
+        SameInventorySpace,
+        ToChestSpace,
+        ToMainSpace
     }
 }
