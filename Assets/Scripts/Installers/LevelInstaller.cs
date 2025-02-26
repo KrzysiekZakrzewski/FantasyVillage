@@ -1,4 +1,5 @@
 using BlueRacconGames.Inventory;
+using BlueRacconGames.Inventory.UI;
 using UnityEngine;
 using Zenject;
 

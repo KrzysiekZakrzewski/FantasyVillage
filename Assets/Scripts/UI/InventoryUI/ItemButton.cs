@@ -2,20 +2,20 @@ using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.UI;
 
-namespace BlueRacconGames.Inventory
+namespace BlueRacconGames.Inventory.UI
 {
     public class ItemButton : MonoBehaviour, IBeginDragHandler, IEndDragHandler, IDragHandler
     {
         private Image icon;
-        private InventorySlot slot;
+        private IInventorySlot slot;
 
-        private InventorySlot cacheSlot;
+        private IInventorySlot cacheSlot;
         private GameObject cachePointer;
 
         private void Awake()
         {
             icon = GetComponent<Image>();
-            slot = GetComponentInParent<InventorySlot>();
+            slot = GetComponentInParent<IInventorySlot>();
         }
 
         public void OnBeginDrag(PointerEventData eventData)
@@ -32,7 +32,7 @@ namespace BlueRacconGames.Inventory
 
             cachePointer = eventData.pointerCurrentRaycast.gameObject;
 
-            if(!cachePointer.TryGetComponent<InventorySlot>(out var selectedSlot)) return;
+            if(!cachePointer.TryGetComponent<IInventorySlot>(out var selectedSlot)) return;
 
             if(selectedSlot == cacheSlot) return;
 

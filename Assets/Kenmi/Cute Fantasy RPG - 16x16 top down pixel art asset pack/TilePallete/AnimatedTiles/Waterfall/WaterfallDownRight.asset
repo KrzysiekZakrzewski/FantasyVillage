@@ -1,0 +1,37 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 13b75c95f34a00d4e8c04f76b73312e6, type: 3}
+  m_Name: WaterfallDownRight
+  m_EditorClassIdentifier: 
+  m_AnimatedSprites:
+  - {fileID: 657592361, guid: 2d026abcec0551a46b01daa33e2f21ab, type: 3}
+  - {fileID: -2054612282, guid: 2d026abcec0551a46b01daa33e2f21ab, type: 3}
+  - {fileID: 1465467615, guid: 2d026abcec0551a46b01daa33e2f21ab, type: 3}
+  - {fileID: -1210716907, guid: 2d026abcec0551a46b01daa33e2f21ab, type: 3}
+  - {fileID: 1945581331, guid: 2d026abcec0551a46b01daa33e2f21ab, type: 3}
+  - {fileID: -2004933484, guid: 2d026abcec0551a46b01daa33e2f21ab, type: 3}
+  - {fileID: -1664217591, guid: 2d026abcec0551a46b01daa33e2f21ab, type: 3}
+  - {fileID: -1379195166, guid: 2d026abcec0551a46b01daa33e2f21ab, type: 3}
+  - {fileID: 1000615232, guid: 2d026abcec0551a46b01daa33e2f21ab, type: 3}
+  - {fileID: -1534555715, guid: 2d026abcec0551a46b01daa33e2f21ab, type: 3}
+  - {fileID: -400696414, guid: 2d026abcec0551a46b01daa33e2f21ab, type: 3}
+  - {fileID: 508285524, guid: 2d026abcec0551a46b01daa33e2f21ab, type: 3}
+  - {fileID: 1958929782, guid: 2d026abcec0551a46b01daa33e2f21ab, type: 3}
+  - {fileID: 2108605592, guid: 2d026abcec0551a46b01daa33e2f21ab, type: 3}
+  - {fileID: 227945685, guid: 2d026abcec0551a46b01daa33e2f21ab, type: 3}
+  - {fileID: 1026432603, guid: 2d026abcec0551a46b01daa33e2f21ab, type: 3}
+  m_MinSpeed: 12
+  m_MaxSpeed: 12
+  m_AnimationStartTime: 0
+  m_AnimationStartFrame: 0
+  m_TileColliderType: 0
+  m_TileAnimationFlags: 0

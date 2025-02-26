@@ -1,28 +1,29 @@
 using Game.View;
 using Inputs;
 using System;
+using System.Reflection;
 using UnityEngine;
 using UnityEngine.InputSystem;
 using ViewSystem.Implementation;
 using Zenject;
 
-namespace BlueRacconGames.Inventory
+namespace BlueRacconGames.Inventory.UI
 {
     public class InventoryUI : SingleViewTypeStackController
     {
         [SerializeField] private MainInventoryView mainInventoryView;
-        [SerializeField] private ChestInventoryView chestInventoryView;
+        [SerializeField] private SubInventoryView subInventoryView;
 
         [NonSerialized] protected Inputs.PlayerInput playerInput;
 
-        private InventorySlot selectedSlot;
+        private IInventorySlot selectedSlot;
         private InventoryManager inventoryManager;
 
         public event Action OnInventoryUIOpenedE;
         public event Action OnInventoryUIClosedE;
 
         public bool IsMainInventoryOpen => mainInventoryView.gameObject.activeSelf;
-        public bool IsChestInventoryOpen => chestInventoryView.gameObject.activeSelf;
+        public bool IsSubInventoryOpened => subInventoryView.gameObject.activeSelf;
 
         [Inject]
         private void Inject(InventoryManager inventoryManager)
@@ -37,9 +38,9 @@ namespace BlueRacconGames.Inventory
             playerInput = InputManager.GetPlayer(0);
 
             mainInventoryView.Initialize(this);
-            chestInventoryView.Initialize(this);
+            subInventoryView.Initialize(this);
 
-            chestInventoryView.OnInventoryOpenedE += UpdateUI;
+            subInventoryView.OnInventoryOpenedE += UpdateUI;
 
             SetupInputs();
         }
@@ -50,8 +51,7 @@ namespace BlueRacconGames.Inventory
 
             RemoveInputs();
 
-            chestInventoryView.OnInventoryOpenedE -= UpdateUI;
-            //chestInventoryView.OnChestInventoryClosedE += UpdateUI;
+            subInventoryView.OnInventoryOpenedE -= UpdateUI;
         }
 
         private void Update()
@@ -67,13 +67,13 @@ namespace BlueRacconGames.Inventory
             OnInventoryUIOpenedE?.Invoke();
         }
 
-        public void OpenChestInventory()
+        public void OpenSubInventory()
         {
-            if (IsChestInventoryOpen) return;
+            if (IsSubInventoryOpened) return;
 
             OpenMainInventory();
 
-            mainInventoryView.ParentStack.Push(chestInventoryView);
+            mainInventoryView.ParentStack.Push(subInventoryView);
         }
 
         public void CloseInventory()
@@ -82,7 +82,7 @@ namespace BlueRacconGames.Inventory
             OnInventoryUIClosedE?.Invoke();
         }
 
-        public void OnSlotClicked(InventorySlot clickedSlot)
+        public void OnSlotClicked(IInventorySlot clickedSlot)
         {
             if (clickedSlot == null) return;
 
@@ -103,18 +103,16 @@ namespace BlueRacconGames.Inventory
                 return;
             }
 
-            var changeSlotType = CheckChangeSlotType(clickedSlot);
+            CheckChangeSlotType(clickedSlot);
 
-            inventoryManager.TryChangeSlotItem(selectedSlot, clickedSlot, changeSlotType);
-
-            clickedSlot.ValidStatus = selectedSlot.ValidStatus = ValidStatus.WaitForUpdate;
+            selectedSlot.ValidStatus = clickedSlot.ValidStatus = ValidStatus.WaitForUpdate;
 
             selectedSlot = null;
 
             UpdateUI();
         }
 
-        public int GetFirstFreeSlotId<InventoryView>()
+        public int GetFirstFreeSlotId()//TO DO dodaæ, by szuka³o po ró¿nych inventory
         {
             return mainInventoryView.GetFirstFreeSlotId();
         }
@@ -123,8 +121,9 @@ namespace BlueRacconGames.Inventory
         {
             mainInventoryView.UpdateUI(inventoryManager);
 
-            if (IsChestInventoryOpen)
-                chestInventoryView.UpdateUI(inventoryManager);
+            if (!IsSubInventoryOpened) return;
+
+            subInventoryView.UpdateUI(inventoryManager);
         }
 
         private void ChangeMainInventoryState(InputAction.CallbackContext callback)
@@ -153,45 +152,23 @@ namespace BlueRacconGames.Inventory
             selectedSlot.Move(playerInput.GetCoordinates());
         }
 
-        private void SlotUpdate(ChangeSlotResult result)
+        private void CheckChangeSlotType(IInventorySlot clickedSlot)
         {
-            switch (result)
+            if (selectedSlot.Type == clickedSlot.Type)
             {
-                case ChangeSlotResult.Error:
-                    Debug.LogError("Change Slot Error!!!");
-                    break;
-                case ChangeSlotResult.EmptyPlace:
-
-                    break;
-                case ChangeSlotResult.CountIncreased:
-
-                    break;
-                case ChangeSlotResult.Swap:
-
-                    break;
+                inventoryManager.TransferBetweenSameInventory(selectedSlot.Id, clickedSlot.Id, clickedSlot.Type);
+                return;
             }
 
-
-            selectedSlot = null;
-        }
-        private ChangeSlotType CheckChangeSlotType(InventorySlot clickedSlot)
-        {
-            if (selectedSlot.InventorySlotType == clickedSlot.InventorySlotType)
-                return ChangeSlotType.SameInventorySpace;
-
-            return selectedSlot.InventorySlotType switch
+            switch (clickedSlot.Type)
             {
-                InventorySlotType.Main => ChangeSlotType.ToChestSpace,
-                InventorySlotType.Chest => ChangeSlotType.ToMainSpace,
-                _ => ChangeSlotType.Error,
-            };
-        }
-    }
-    public enum ChangeSlotType
-    {
-        Error,
-        SameInventorySpace,
-        ToChestSpace,
-        ToMainSpace
+                case SlotType.Main:
+                    inventoryManager.TransferToMainInventory(selectedSlot.Id, clickedSlot.Id);
+                    break;
+                case SlotType.Sub:
+                    inventoryManager.TransferFromMainInventory(selectedSlot.Id, clickedSlot.Id);
+                    break;
+            }
+        }//TO DO refaktoryzacja 
     }
 }

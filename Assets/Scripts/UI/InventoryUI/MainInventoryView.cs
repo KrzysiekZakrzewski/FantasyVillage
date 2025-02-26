@@ -1,4 +1,5 @@
 using BlueRacconGames.Inventory;
+using BlueRacconGames.Inventory.UI;
 
 namespace Game.View
 {
@@ -10,7 +11,7 @@ namespace Game.View
         {
             for (int i = 0; i < slots.Length; i++)
             {
-                slots[i].Initialize(inventoryUI.OnSlotClicked, i, InventorySlotType.Main);
+                slots[i].Initialize(inventoryUI.OnSlotClicked, i);
             }
         }
     }

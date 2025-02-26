@@ -1,0 +1,37 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 13b75c95f34a00d4e8c04f76b73312e6, type: 3}
+  m_Name: WaterfallSecTopLeft
+  m_EditorClassIdentifier: 
+  m_AnimatedSprites:
+  - {fileID: -328632001, guid: 2d026abcec0551a46b01daa33e2f21ab, type: 3}
+  - {fileID: -465624112, guid: 2d026abcec0551a46b01daa33e2f21ab, type: 3}
+  - {fileID: 435109417, guid: 2d026abcec0551a46b01daa33e2f21ab, type: 3}
+  - {fileID: -739208379, guid: 2d026abcec0551a46b01daa33e2f21ab, type: 3}
+  - {fileID: 1634701337, guid: 2d026abcec0551a46b01daa33e2f21ab, type: 3}
+  - {fileID: -2005457920, guid: 2d026abcec0551a46b01daa33e2f21ab, type: 3}
+  - {fileID: -2025422913, guid: 2d026abcec0551a46b01daa33e2f21ab, type: 3}
+  - {fileID: -1559138703, guid: 2d026abcec0551a46b01daa33e2f21ab, type: 3}
+  - {fileID: -1128403057, guid: 2d026abcec0551a46b01daa33e2f21ab, type: 3}
+  - {fileID: 469203049, guid: 2d026abcec0551a46b01daa33e2f21ab, type: 3}
+  - {fileID: 1497234760, guid: 2d026abcec0551a46b01daa33e2f21ab, type: 3}
+  - {fileID: -966133271, guid: 2d026abcec0551a46b01daa33e2f21ab, type: 3}
+  - {fileID: -450357243, guid: 2d026abcec0551a46b01daa33e2f21ab, type: 3}
+  - {fileID: 2104792247, guid: 2d026abcec0551a46b01daa33e2f21ab, type: 3}
+  - {fileID: -196056607, guid: 2d026abcec0551a46b01daa33e2f21ab, type: 3}
+  - {fileID: -668400874, guid: 2d026abcec0551a46b01daa33e2f21ab, type: 3}
+  m_MinSpeed: 12
+  m_MaxSpeed: 12
+  m_AnimationStartTime: 0
+  m_AnimationStartFrame: 0
+  m_TileColliderType: 0
+  m_TileAnimationFlags: 0

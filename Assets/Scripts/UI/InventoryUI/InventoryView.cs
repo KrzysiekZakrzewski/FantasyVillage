@@ -1,4 +1,5 @@
 ﻿using BlueRacconGames.Inventory;
+using BlueRacconGames.Inventory.UI;
 using System;
 using UnityEngine;
 using ViewSystem;
@@ -9,7 +10,7 @@ namespace Game.View
     public abstract class InventoryView : BasicView
     {
         [SerializeField]
-        protected InventorySlot[] slots;
+        protected InventorySlotBase[] slots;
 
         public override bool Absolute => false;
 
@@ -42,7 +43,7 @@ namespace Game.View
 
         public int GetFirstFreeSlotId()
         {
-            foreach(InventorySlot slot in slots)
+            foreach(IInventorySlot slot in slots)
             {
                 if (!slot.IsFree) continue;
 

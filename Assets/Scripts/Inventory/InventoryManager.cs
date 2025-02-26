@@ -1,7 +1,5 @@
-using Game.Item.Factory;
-using Game.View;
+using BlueRacconGames.Inventory.UI;
 using Interactable.Implementation;
-using Saves.Serializiation;
 using System;
 using System.Collections.Generic;
 using UnityEngine;
@@ -11,233 +9,113 @@ namespace BlueRacconGames.Inventory
 {
     public class InventoryManager : MonoBehaviour
     {
-        [field: SerializeField]
-        public List<InventoryItem> Items { get; private set; } = new();
-
-        private InventoryUI inventoryUI;
-
-        public ChestInteractable CurrentChestOpened;
-        public List<InventoryItem> OpenedChestItems => CurrentChestOpened != null ? CurrentChestOpened.Items: new List<InventoryItem>();
+        [SerializeField]
+        private MainInventory mainInventory;
+        private IInventory subInventory;
+        public InventoryUI InventoryUI { get; private set; }
 
         [Inject]
         private void Inject(InventoryUI inventoryUI)
         {
-            this.inventoryUI = inventoryUI;
+            this.InventoryUI = inventoryUI;
         }
 
         private void Awake()
         {
-            for(int i = 0; i < Items.Count; i++)
+            mainInventory.Initialize(this, InventoryUI.UpdateUI);
+        }
+
+        private void OnDestroy()
+        {
+            mainInventory.OnItemChangedE -= InventoryUI.UpdateUI;
+        }
+
+        public InventoryItem GetItemBySlotId(int slotId, SlotType type) => GetInventoryByType(type).GetItemBySlotId(slotId);
+
+        public int GetFirstFreeSlotId() => InventoryUI.GetFirstFreeSlotId();
+
+        public void TransferBetweenSameInventory(int sourceSlotId, int targetSlotId, SlotType type)
+        {
+            IInventory inventory = GetInventoryByType(type);
+
+            var sourceItem = inventory.GetItemBySlotId(sourceSlotId);
+            var targetItem = inventory.GetItemBySlotId(targetSlotId);
+
+            if (targetItem == null)
             {
-                Items[i].SetSlotId(i);
-            }
-
-            inventoryUI.UpdateUI();
-        }
-
-        public bool AddItem(ItemFactorySO item, int count = 1)
-        {
-            if (item == null || count <= 0) return false;
-
-            var inventoryItem = Items.Find(x => x.Item == item);
-
-            if (inventoryItem != null)
-                inventoryItem.Count += count;
-            else
-            {
-                var emptySlotId = inventoryUI.GetFirstFreeSlotId<MainInventoryView>();
-
-                Items.Add(new InventoryItem(item, emptySlotId, count));
-            }
-
-            inventoryUI.UpdateUI();
-
-            return true;
-        }
-
-        public bool AddItem(ItemFactorySO item, int count, int slotId)
-        {
-            if (item == null || count <= 0) return false;
-
-            Items.Add(new InventoryItem(item, slotId, count));
-            inventoryUI.UpdateUI();
-
-            return true;
-        }
-
-        public bool RemoveItem(ItemFactorySO item, int count = 1) 
-        {
-            var inventoryItem = Items.Find(x => x.Item == item);
-
-            if (inventoryItem == null || count <= 0) return false;
-
-            inventoryItem.Count -= count;
-
-            if (inventoryItem.Count > 0) return true;
-
-            Items.Remove(inventoryItem);
-            return true;
-        }
-
-        public bool RemoveItemBySlot(int slotId)
-        {
-            var inventoryItem = Items.Find(x => x.SlotId == slotId);
-
-            if (inventoryItem == null) return false;
-
-            Items.Remove(inventoryItem);
-            return true;
-        }
-
-        public InventoryItem GetItemBySlotId(int slotId)
-        {
-            return Items.Find(x => x.SlotId == slotId);
-        }
-        public InventoryItem GetItemBySlotIdFromChest(int slotId)
-        {
-            return OpenedChestItems.Find(x => x.SlotId == slotId);
-        }
-
-        public void ChangeSlot(int oldSlotId, int newSlotId, InventorySlotType slotType)
-        {
-            var selectedItem = slotType == InventorySlotType.Main 
-                ? GetItemBySlotId(oldSlotId) : GetItemBySlotIdFromChest(oldSlotId);
-            var clickedItem = slotType == InventorySlotType.Main
-                ? GetItemBySlotId(newSlotId) : GetItemBySlotIdFromChest(newSlotId);
-
-            if (clickedItem == null)
-            {
-                selectedItem.SetSlotId(newSlotId);
-
+                sourceItem.SetSlotId(targetSlotId);
                 return;
             }
 
-            if(selectedItem.Item == clickedItem.Item)
+            if (sourceItem.Item == targetItem.Item)
             {
-                RemoveItemBySlot(oldSlotId);
-                AddItem(selectedItem.Item, selectedItem.Count);
-
+                inventory.RemoveItemBySlot(sourceSlotId);
+                targetItem.Count += sourceItem.Count;
                 return;
             }
 
-            clickedItem.SetSlotId(oldSlotId);
+            sourceItem.SetSlotId(targetSlotId);
+            targetItem.SetSlotId(sourceSlotId);
         }
 
-        public void GetFromChest(int oldSlotId, int newSlotId)
+        public void TransferToMainInventory(int sourceSlotId, int targetSlotId)
         {
-            var selectedItem = GetItemBySlotIdFromChest(oldSlotId);
-            var clickedItem = GetItemBySlotId(newSlotId);
+            TransferItem(subInventory, mainInventory, sourceSlotId, targetSlotId);
+        }
 
-            CurrentChestOpened.RemoveItemBySlot(oldSlotId);
+        public void TransferFromMainInventory(int sourceSlotId, int targetSlotId)
+        {
+            TransferItem(mainInventory, subInventory, sourceSlotId, targetSlotId);
+        }
 
-            if (clickedItem == null)
+        public void OpenSubInventory(IInventory inventory)
+        {
+            subInventory = inventory;
+
+            InventoryUI.OnInventoryUIClosedE += CloseSubInventory;
+
+            InventoryUI.OpenSubInventory();
+        }
+
+        public void CloseSubInventory()
+        {
+            if (subInventory == null) return;
+
+            InventoryUI.OnInventoryUIClosedE -= CloseSubInventory;
+
+            subInventory = null;
+        }
+
+        private void TransferItem(IInventory sourceInventory, IInventory targetInventory, int sourceSlotId, int targetSlotId)
+        {
+            var sourceItem = sourceInventory.GetItemBySlotId(sourceSlotId);
+            var targetItem = targetInventory.GetItemBySlotId(targetSlotId);
+
+            if (sourceItem == null) return;
+
+            sourceInventory.RemoveItemBySlot(sourceSlotId);
+
+            if (targetItem == null)
             {
-                AddItem(selectedItem.Item, selectedItem.Count, newSlotId);
+                targetInventory.AddItem(sourceItem.Item, sourceItem.Count, targetSlotId);
                 return;
             }
 
-            if (selectedItem.Item == clickedItem.Item)
+            if (sourceItem.Item == targetItem.Item)
             {
-                AddItem(selectedItem.Item, selectedItem.Count);
-
+                targetItem.Count += sourceItem.Count;
                 return;
             }
 
-            RemoveItemBySlot(newSlotId);
-
-            AddItem(selectedItem.Item, selectedItem.Count, newSlotId);
-            CurrentChestOpened.AddItem(clickedItem.Item, clickedItem.Count, oldSlotId);
+            targetInventory.RemoveItemBySlot(targetSlotId);
+            targetInventory.AddItem(sourceItem.Item, sourceItem.Count, targetSlotId);
+            sourceInventory.AddItem(targetItem.Item, targetItem.Count, sourceSlotId);
         }
 
-        public void PutInChest(int oldSlotId, int newSlotId)
+        private IInventory GetInventoryByType(SlotType type)
         {
-            var selectedItem = GetItemBySlotId(oldSlotId);
-            var clickedItem = GetItemBySlotIdFromChest(newSlotId);
-
-            RemoveItemBySlot(oldSlotId);
-
-            if (clickedItem == null)
-            {
-                CurrentChestOpened.AddItem(selectedItem.Item, selectedItem.Count, newSlotId);
-
-                return;
-            }
-
-            if (selectedItem.Item == clickedItem.Item)
-            {
-                CurrentChestOpened.AddItem(selectedItem.Item, selectedItem.Count);
-
-                return;
-            }
-
-            CurrentChestOpened.RemoveItemBySlot(newSlotId);
-            CurrentChestOpened.AddItem(selectedItem.Item, selectedItem.Count, newSlotId);
-            AddItem(clickedItem.Item, clickedItem.Count, oldSlotId);
+            var inventory = type == SlotType.Main ? mainInventory : subInventory;
+            return inventory;
         }
-
-        public void TryChangeSlotItem(InventorySlot selectedSlot, InventorySlot clickedSlot, ChangeSlotType changeSlotType)
-        {
-            switch (changeSlotType)
-            {
-                case ChangeSlotType.SameInventorySpace:
-                    ChangeSlot(selectedSlot.Id, clickedSlot.Id, selectedSlot.InventorySlotType);
-                    break;
-                case ChangeSlotType.ToMainSpace:
-                    GetFromChest(selectedSlot.Id, clickedSlot.Id);
-                    break;
-                case ChangeSlotType.ToChestSpace:
-                    PutInChest(selectedSlot.Id, clickedSlot.Id);
-                    break;
-                default:
-                    return;
-            }
-        }
-
-        public void OpenChestInventory(ChestInteractable chest)
-        {
-            CurrentChestOpened = chest;
-
-            inventoryUI.OnInventoryUIClosedE += CloseChestInventory;
-
-            inventoryUI.OpenChestInventory();
-        }
-
-        public void CloseChestInventory()
-        {
-            if (CurrentChestOpened == null) return;
-
-            inventoryUI.OnInventoryUIClosedE -= CloseChestInventory;
-
-            CurrentChestOpened.Close();
-            CurrentChestOpened = null;
-        }
-    }
-
-    [System.Serializable]
-    public class InventoryItem
-    {
-        [field: SerializeField]
-        public ItemFactorySO Item { get; private set; }
-        [field: SerializeField]
-        public int Count;
-
-        public int SlotId { get; private set; } = -1;
-
-        public InventoryItem(ItemFactorySO item, int slotId, int count) 
-        {
-            Item = item;
-            Count = count;
-            SlotId = slotId;
-        }
-
-        public void SetSlotId(int slotId) => SlotId = slotId;
-    }
-
-    public enum ChangeSlotResult
-    {
-        Error,
-        EmptyPlace,
-        CountIncreased,
-        Swap
     }
 }
