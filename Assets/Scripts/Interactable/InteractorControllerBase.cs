@@ -10,21 +10,20 @@ namespace Interactable
 {
     public abstract class InteractorControllerBase : MonoBehaviour
     {
-        [SerializeField]
-        private Transform interactionPoint;
-        [SerializeField]
-        private float interactionPointRadius = 0.5f;
-        [SerializeField]
-        private LayerMask interactableLayerMask;
+        [SerializeField] private Transform interactionPoint;
+        [SerializeField] private float interactionPointRadius = 0.5f;
+        [SerializeField] private LayerMask interactableLayerMask;
+
+        [SerializeField] private float offSet;
 
         private Collider2D[] interactableCollider;
 
         private IInteractable interactable;
         private IInteractable lastInteractable;
+        [SerializeField]
         private InteractionPromptUI promptUI;
 
-        [NonSerialized]
-        private Inputs.PlayerInput playerInput;
+        [NonSerialized] private Inputs.PlayerInput playerInput;
 
         /*
         [Inject]

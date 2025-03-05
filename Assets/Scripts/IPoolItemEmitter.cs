@@ -4,7 +4,7 @@ namespace BlueRacconGames.Pool
 {
     public interface IPoolItemEmitter
     {
-        void EmitItem(IPoolItem projectile, Vector3 startPosition);
+        T EmitItem<T>(PoolItemBase item, Vector3 startPosition) where T : class;
         void Clear();
     }
 }

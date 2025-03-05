@@ -7,8 +7,8 @@ namespace BlueRacconGames.MeleeCombat
     public interface IMeleeWeapon
     {
         List<IMeleeWeaponTargetEffect> MeleeWeaponTargetHitEffects { get; }
-        event Action<IWeaponTarget> OnHitE;
+        event Action<IDamagableTarget> OnHitE;
         void ResetWeapon();
-        void OnHit(MeleeCombatControllerBase source, IWeaponTarget target);
+        void OnHit(MeleeCombatControllerBase source, IDamagableTarget target);
     }
 }

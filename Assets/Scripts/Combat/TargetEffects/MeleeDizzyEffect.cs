@@ -9,7 +9,7 @@
             dizzyTime = initialData.DizzyTime;
         }
 
-        public void Execute(MeleeCombatControllerBase source, IWeaponTarget target)
+        public void Execute(MeleeCombatControllerBase source, IDamagableTarget target)
         {
             MeleeCombatControllerBase meleeCombatController = target.GameObject.GetComponent<MeleeCombatControllerBase>();
 

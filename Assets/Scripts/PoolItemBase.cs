@@ -10,10 +10,10 @@ namespace BlueRacconGames.Pool
 
         public GameObject GameObject => gameObject;
 
-        public event Action<IPoolItem> OnLaunchE;
-        public event Action<IPoolItem> OnExpireE;
+        public event Action<PoolItemBase> OnLaunchE;
+        public event Action<PoolItemBase> OnExpireE;
 
-        public void Launch(IPoolItemEmitter sourceEmitter, Vector3 startPosition)
+        public virtual void Launch(IPoolItemEmitter sourceEmitter, Vector3 startPosition)
         {
             ResetItem();
             this.sourceEmitter = sourceEmitter;

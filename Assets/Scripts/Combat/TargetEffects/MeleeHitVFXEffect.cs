@@ -11,7 +11,7 @@ namespace BlueRacconGames.MeleeCombat
             this.vfxEffect = vfxEffect;
         }
 
-        public void Execute(MeleeCombatControllerBase source, IWeaponTarget target)
+        public void Execute(MeleeCombatControllerBase source, IDamagableTarget target)
         {
             source.SpawnHitEffect(vfxEffect);
         }

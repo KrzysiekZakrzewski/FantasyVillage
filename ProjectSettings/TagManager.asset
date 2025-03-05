@@ -41,20 +41,26 @@ TagManager:
   - name: Default
     uniqueID: 0
     locked: 0
-  - name: Base
+  - name: Logic
+    uniqueID: 3027753477
+    locked: 0
+  - name: BaseDown
     uniqueID: 3923815603
+    locked: 0
+  - name: BaseMid
+    uniqueID: 1552354921
+    locked: 0
+  - name: BaseTop
+    uniqueID: 2426102135
+    locked: 0
+  - name: Enviroment
+    uniqueID: 2908030821
     locked: 0
   - name: Unit
     uniqueID: 2697295711
     locked: 0
   - name: Interactable
     uniqueID: 2614848839
-    locked: 0
-  - name: Decoration
-    uniqueID: 3834452999
-    locked: 0
-  - name: Enviroment
-    uniqueID: 2908030821
     locked: 0
   m_RenderingLayers:
   - Default

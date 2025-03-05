@@ -9,11 +9,11 @@ namespace BlueRacconGames.MeleeCombat
 {
     public abstract class MeleeWeaponBase : ItemBase, IMeleeWeapon
     {
-        private readonly HashSet<IWeaponTarget> hitTargets = new();
+        private readonly HashSet<IDamagableTarget> hitTargets = new();
 
         public List<IMeleeWeaponTargetEffect> MeleeWeaponTargetHitEffects { get; }
 
-        public event Action<IWeaponTarget> OnHitE;
+        public event Action<IDamagableTarget> OnHitE;
 
         protected MeleeWeaponBase(MeleeWeaponBaseFactorySO initialData) : base(initialData)
         {
@@ -25,7 +25,7 @@ namespace BlueRacconGames.MeleeCombat
             }
         }
 
-        public void OnHit(MeleeCombatControllerBase source, IWeaponTarget target)
+        public void OnHit(MeleeCombatControllerBase source, IDamagableTarget target)
         {
             if (hitTargets.Contains(target))
                 return;
@@ -39,7 +39,7 @@ namespace BlueRacconGames.MeleeCombat
             hitTargets.Clear();
         }
 
-        private void OnHitInternal(MeleeCombatControllerBase source, IWeaponTarget target)
+        private void OnHitInternal(MeleeCombatControllerBase source, IDamagableTarget target)
         {
             OnHitE?.Invoke(target);
 

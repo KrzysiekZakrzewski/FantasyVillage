@@ -5,29 +5,27 @@ namespace Interactable.UI
 {
     public class InteractionPromptUI : MonoBehaviour
     {
-        [SerializeField]
-        private GameObject uiPanel;
-        [SerializeField]
-        private TextMeshProUGUI promptTxt;
+        [SerializeField] private CanvasGroup canvasGroup;
+        [SerializeField] private TextMeshProUGUI promptTxt;
+
+        public bool IsDisplayed => canvasGroup.alpha > 0;
 
         private void Awake()
         {
-            uiPanel.SetActive(false);
+            Close();
         }
-
-        public bool IsDisplayed => uiPanel.activeInHierarchy;
 
         public void SetUp(string promptText, Vector2 promptPosition)
         {
             promptTxt.text = promptText;
-            uiPanel.transform.position = promptPosition;
-            uiPanel.SetActive(true);
+            canvasGroup.transform.position = Camera.main.WorldToScreenPoint(promptPosition);
+            canvasGroup.alpha = 1f;
         }
 
         public void Close()
         {
             promptTxt.text = "";
-            uiPanel.SetActive(false);
+            canvasGroup.alpha = 0f;
         }
     }
 }

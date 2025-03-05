@@ -12,12 +12,12 @@ namespace BlueRacconGames.InventorySystem
         [SerializeField]
         private ParticlePoolItem pickUpParticle;
 
-        private DefaultPooledParticleEmitter particleEmitter;
+        private ResourceSourcesPooledEmitter particleEmitter;
 
         public int GemsAmount {  get; private set; }
 
         [Inject]
-        private void Inject(DefaultPooledParticleEmitter particleEmitter)
+        private void Inject(ResourceSourcesPooledEmitter particleEmitter)
         {
             this.particleEmitter = particleEmitter;
         }
@@ -33,7 +33,7 @@ namespace BlueRacconGames.InventorySystem
 
             hud.RefreshGemsValue(GemsAmount);
 
-            particleEmitter.EmitItem(pickUpParticle, position);
+            particleEmitter.EmitItem<ParticleSystem>(pickUpParticle, position);
 
             return true;
         }

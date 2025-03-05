@@ -19,7 +19,7 @@ namespace BlueRacconGames.MeleeCombat
             return Random.Range(minDamageValue, maxDamageValue);
         }
 
-        public void Execute(MeleeCombatControllerBase source, IWeaponTarget target)
+        public void Execute(MeleeCombatControllerBase source, IDamagableTarget target)
         {
             IDamageable damageable = target.GameObject.GetComponent<IDamageable>();
 

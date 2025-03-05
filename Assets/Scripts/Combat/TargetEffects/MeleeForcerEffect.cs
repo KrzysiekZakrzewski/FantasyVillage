@@ -11,7 +11,7 @@ namespace BlueRacconGames.MeleeCombat
             this.forceValue = forceValue;
         }
 
-        public void Execute(MeleeCombatControllerBase source, IWeaponTarget target)
+        public void Execute(MeleeCombatControllerBase source, IDamagableTarget target)
         {
             var rb = source.GetComponent<Rigidbody2D>();
 

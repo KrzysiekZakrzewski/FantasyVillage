@@ -12,7 +12,7 @@ namespace BlueRacconGames.MeleeCombat
             this.damageValue = damageValue;
         }
 
-        public void Execute(MeleeCombatControllerBase source, IWeaponTarget target)
+        public void Execute(MeleeCombatControllerBase source, IDamagableTarget target)
         {
             IDamageable damageable = target.GameObject.GetComponent<IDamageable>();
 

@@ -6,8 +6,8 @@ namespace BlueRacconGames.Pool
 {
     public interface IPoolItem : IGameObject
     {
-        event Action<IPoolItem> OnLaunchE;
-        event Action<IPoolItem> OnExpireE;
+        event Action<PoolItemBase> OnLaunchE;
+        event Action<PoolItemBase> OnExpireE;
         void Launch(IPoolItemEmitter sourceEmitter, Vector3 startPosition);
     }
 }

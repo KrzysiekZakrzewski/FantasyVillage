@@ -9,8 +9,8 @@ namespace BlueRacconGames.Inventory
 {
     public class InventoryManager : MonoBehaviour
     {
-        [SerializeField]
-        private MainInventory mainInventory;
+        [field: SerializeField] public MainInventory PlayerInventory { get; private set; }
+
         private IInventory subInventory;
         public InventoryUI InventoryUI { get; private set; }
 
@@ -22,12 +22,12 @@ namespace BlueRacconGames.Inventory
 
         private void Awake()
         {
-            mainInventory.Initialize(this, InventoryUI.UpdateUI);
+            PlayerInventory.Initialize(this, InventoryUI.UpdateUI);
         }
 
         private void OnDestroy()
         {
-            mainInventory.OnItemChangedE -= InventoryUI.UpdateUI;
+            PlayerInventory.OnItemChangedE -= InventoryUI.UpdateUI;
         }
 
         public InventoryItem GetItemBySlotId(int slotId, SlotType type) => GetInventoryByType(type).GetItemBySlotId(slotId);
@@ -60,12 +60,12 @@ namespace BlueRacconGames.Inventory
 
         public void TransferToMainInventory(int sourceSlotId, int targetSlotId)
         {
-            TransferItem(subInventory, mainInventory, sourceSlotId, targetSlotId);
+            TransferItem(subInventory, PlayerInventory, sourceSlotId, targetSlotId);
         }
 
         public void TransferFromMainInventory(int sourceSlotId, int targetSlotId)
         {
-            TransferItem(mainInventory, subInventory, sourceSlotId, targetSlotId);
+            TransferItem(PlayerInventory, subInventory, sourceSlotId, targetSlotId);
         }
 
         public void OpenSubInventory(IInventory inventory)
@@ -114,7 +114,7 @@ namespace BlueRacconGames.Inventory
 
         private IInventory GetInventoryByType(SlotType type)
         {
-            var inventory = type == SlotType.Main ? mainInventory : subInventory;
+            var inventory = type == SlotType.Main ? PlayerInventory : subInventory;
             return inventory;
         }
     }

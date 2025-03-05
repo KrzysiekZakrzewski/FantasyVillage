@@ -30,7 +30,7 @@ namespace BlueRacconGames.Inventory
             OnItemChangedE?.Invoke();
         }
 
-        public bool AddItem(ItemFactorySO item, int count, int slotId = -1)
+        public bool AddItem(ItemFactorySO item, int count = 1, int slotId = -1)
         {
             if (item == null || count <= 0) return false;
 

@@ -174,7 +174,7 @@ namespace Inputs
                 {
                     ""name"": """",
                     ""id"": ""c1f3f10e-6a27-49e3-bf1c-0efa3d771140"",
-                    ""path"": ""<Mouse>/leftButton"",
+                    ""path"": ""<Keyboard>/space"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": "";Keyboard"",

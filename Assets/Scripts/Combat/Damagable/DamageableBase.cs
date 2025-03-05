@@ -7,7 +7,7 @@ using UnityEngine;
 
 namespace Damageable.Implementation
 {
-    [RequireComponent(typeof(IWeaponTarget))]
+    [RequireComponent(typeof(IDamagableTarget))]
     public abstract class DamageableBase : MonoBehaviour, IDamageable
     {
         protected int maxHealth;

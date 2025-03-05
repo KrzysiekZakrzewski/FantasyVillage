@@ -47,7 +47,7 @@ namespace BlueRacconGames.MeleeCombat
 
                 targetsGM.Add(hit.gameObject);
 
-                if (!hit.TryGetComponent<IWeaponTarget>(out var target))
+                if (!hit.TryGetComponent<IDamagableTarget>(out var target))
                     continue;
 
                 weapon.OnHit(this, target);
