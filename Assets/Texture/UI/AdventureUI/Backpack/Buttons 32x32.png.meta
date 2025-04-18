@@ -1,0 +1,1001 @@
+fileFormatVersion: 2
+guid: 69e8c845e227cd8489dd8b0954a87278
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -3289682402572544752
+    second: Buttons 32x32_0
+  - first:
+      213: -8708432058759913845
+    second: Buttons 32x32_1
+  - first:
+      213: -2036501531233594296
+    second: Buttons 32x32_2
+  - first:
+      213: -2825063285732743503
+    second: Buttons 32x32_3
+  - first:
+      213: 2499303894879395700
+    second: Buttons 32x32_4
+  - first:
+      213: 4263028457466276189
+    second: Buttons 32x32_5
+  - first:
+      213: -1633472076505444120
+    second: Buttons 32x32_6
+  - first:
+      213: 3445719518148517927
+    second: Buttons 32x32_7
+  - first:
+      213: 7337211896497735516
+    second: Buttons 32x32_8
+  - first:
+      213: -2775209714907932872
+    second: Buttons 32x32_9
+  - first:
+      213: -5570706303797486335
+    second: Buttons 32x32_10
+  - first:
+      213: -4982471148816629635
+    second: Buttons 32x32_11
+  - first:
+      213: 4157384976084670312
+    second: Buttons 32x32_12
+  - first:
+      213: 1078188806180510580
+    second: Buttons 32x32_13
+  - first:
+      213: 193999002375001544
+    second: Buttons 32x32_14
+  - first:
+      213: 5139417186494355295
+    second: Buttons 32x32_15
+  - first:
+      213: 2668017024924519062
+    second: Buttons 32x32_16
+  - first:
+      213: -8159112526038733691
+    second: Buttons 32x32_17
+  - first:
+      213: -7678266218861675227
+    second: Buttons 32x32_18
+  - first:
+      213: -2751330888853208375
+    second: Buttons 32x32_19
+  - first:
+      213: 8363653423998728926
+    second: Buttons 32x32_20
+  - first:
+      213: 1525740443987403072
+    second: Buttons 32x32_21
+  - first:
+      213: -1074272657812112578
+    second: Buttons 32x32_22
+  - first:
+      213: -2699361103893367602
+    second: Buttons 32x32_23
+  - first:
+      213: 6386864757385082332
+    second: Buttons 32x32_24
+  - first:
+      213: 7475515339080702889
+    second: Buttons 32x32_25
+  - first:
+      213: -8463550002915553406
+    second: Buttons 32x32_26
+  - first:
+      213: -3488205757615187381
+    second: Buttons 32x32_27
+  - first:
+      213: -4056484214592037514
+    second: Buttons 32x32_28
+  - first:
+      213: -1138180381958534819
+    second: Buttons 32x32_29
+  - first:
+      213: 646183524386277448
+    second: Buttons 32x32_30
+  - first:
+      213: 5175533792402626891
+    second: Buttons 32x32_31
+  - first:
+      213: 438262296722856088
+    second: Buttons 32x32_32
+  - first:
+      213: 1359470682790380157
+    second: Buttons 32x32_33
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 1
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Buttons 32x32_0
+      rect:
+        serializedVersion: 2
+        x: 9
+        y: 195
+        width: 16
+        height: 25
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0155fcac843b852d0800000000000000
+      internalID: -3289682402572544752
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Buttons 32x32_1
+      rect:
+        serializedVersion: 2
+        x: 37
+        y: 195
+        width: 22
+        height: 26
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b8eddfa8e2f652780800000000000000
+      internalID: -8708432058759913845
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Buttons 32x32_2
+      rect:
+        serializedVersion: 2
+        x: 70
+        y: 195
+        width: 20
+        height: 26
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 844584ea5a4ecb3e0800000000000000
+      internalID: -2036501531233594296
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Buttons 32x32_3
+      rect:
+        serializedVersion: 2
+        x: 105
+        y: 195
+        width: 16
+        height: 21
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1b6e6e1d8eb5bc8d0800000000000000
+      internalID: -2825063285732743503
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Buttons 32x32_4
+      rect:
+        serializedVersion: 2
+        x: 133
+        y: 195
+        width: 22
+        height: 22
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 47f590886af4fa220800000000000000
+      internalID: 2499303894879395700
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Buttons 32x32_5
+      rect:
+        serializedVersion: 2
+        x: 166
+        y: 195
+        width: 20
+        height: 22
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d59a8aaabc1592b30800000000000000
+      internalID: 4263028457466276189
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Buttons 32x32_6
+      rect:
+        serializedVersion: 2
+        x: 4
+        y: 163
+        width: 24
+        height: 26
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8e09f590dcdb459e0800000000000000
+      internalID: -1633472076505444120
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Buttons 32x32_7
+      rect:
+        serializedVersion: 2
+        x: 38
+        y: 163
+        width: 22
+        height: 26
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7206fd245a7a1df20800000000000000
+      internalID: 3445719518148517927
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Buttons 32x32_8
+      rect:
+        serializedVersion: 2
+        x: 68
+        y: 163
+        width: 24
+        height: 26
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c57848c785303d560800000000000000
+      internalID: 7337211896497735516
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Buttons 32x32_9
+      rect:
+        serializedVersion: 2
+        x: 100
+        y: 163
+        width: 24
+        height: 22
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 83713bdc7797c79d0800000000000000
+      internalID: -2775209714907932872
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Buttons 32x32_10
+      rect:
+        serializedVersion: 2
+        x: 134
+        y: 163
+        width: 22
+        height: 22
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 10d1f1ea120e0b2b0800000000000000
+      internalID: -5570706303797486335
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Buttons 32x32_11
+      rect:
+        serializedVersion: 2
+        x: 164
+        y: 163
+        width: 24
+        height: 22
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d70072f63e4badab0800000000000000
+      internalID: -4982471148816629635
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Buttons 32x32_12
+      rect:
+        serializedVersion: 2
+        x: 8
+        y: 131
+        width: 16
+        height: 26
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8679216eb9ff1b930800000000000000
+      internalID: 4157384976084670312
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Buttons 32x32_13
+      rect:
+        serializedVersion: 2
+        x: 35
+        y: 132
+        width: 26
+        height: 26
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 47b1139b10f76fe00800000000000000
+      internalID: 1078188806180510580
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Buttons 32x32_14
+      rect:
+        serializedVersion: 2
+        x: 69
+        y: 131
+        width: 22
+        height: 26
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8c59757901931b200800000000000000
+      internalID: 193999002375001544
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Buttons 32x32_15
+      rect:
+        serializedVersion: 2
+        x: 104
+        y: 131
+        width: 16
+        height: 22
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f57988983b0e25740800000000000000
+      internalID: 5139417186494355295
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Buttons 32x32_16
+      rect:
+        serializedVersion: 2
+        x: 131
+        y: 132
+        width: 26
+        height: 22
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 69a02513953b60520800000000000000
+      internalID: 2668017024924519062
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Buttons 32x32_17
+      rect:
+        serializedVersion: 2
+        x: 165
+        y: 131
+        width: 22
+        height: 22
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 58c650be26205ce80800000000000000
+      internalID: -8159112526038733691
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Buttons 32x32_18
+      rect:
+        serializedVersion: 2
+        x: 4
+        y: 97
+        width: 26
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 52d3edd1e81517590800000000000000
+      internalID: -7678266218861675227
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Buttons 32x32_19
+      rect:
+        serializedVersion: 2
+        x: 36
+        y: 97
+        width: 26
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9c2485e322f41d9d0800000000000000
+      internalID: -2751330888853208375
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Buttons 32x32_20
+      rect:
+        serializedVersion: 2
+        x: 100
+        y: 97
+        width: 26
+        height: 26
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: eda7ce10a7aa11470800000000000000
+      internalID: 8363653423998728926
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Buttons 32x32_21
+      rect:
+        serializedVersion: 2
+        x: 132
+        y: 97
+        width: 26
+        height: 26
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 041e05f99d48c2510800000000000000
+      internalID: 1525740443987403072
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Buttons 32x32_22
+      rect:
+        serializedVersion: 2
+        x: 5
+        y: 66
+        width: 22
+        height: 26
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e3bb13f95ba6711f0800000000000000
+      internalID: -1074272657812112578
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Buttons 32x32_23
+      rect:
+        serializedVersion: 2
+        x: 36
+        y: 64
+        width: 22
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ec4fde9b061f98ad0800000000000000
+      internalID: -2699361103893367602
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Buttons 32x32_24
+      rect:
+        serializedVersion: 2
+        x: 71
+        y: 67
+        width: 18
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: cd5366468a3b2a850800000000000000
+      internalID: 6386864757385082332
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Buttons 32x32_25
+      rect:
+        serializedVersion: 2
+        x: 101
+        y: 66
+        width: 22
+        height: 22
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9ab93ea089d5eb760800000000000000
+      internalID: 7475515339080702889
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Buttons 32x32_26
+      rect:
+        serializedVersion: 2
+        x: 132
+        y: 64
+        width: 22
+        height: 26
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 28f46793d1e6b8a80800000000000000
+      internalID: -8463550002915553406
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Buttons 32x32_27
+      rect:
+        serializedVersion: 2
+        x: 167
+        y: 67
+        width: 18
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b4adfd14857679fc0800000000000000
+      internalID: -3488205757615187381
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Buttons 32x32_28
+      rect:
+        serializedVersion: 2
+        x: 3
+        y: 33
+        width: 26
+        height: 28
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 67d1348591974b7c0800000000000000
+      internalID: -4056484214592037514
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Buttons 32x32_29
+      rect:
+        serializedVersion: 2
+        x: 33
+        y: 11
+        width: 30
+        height: 42
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d590b0319fe5430f0800000000000000
+      internalID: -1138180381958534819
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Buttons 32x32_30
+      rect:
+        serializedVersion: 2
+        x: 65
+        y: 11
+        width: 30
+        height: 42
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 84801c6ed74b7f800800000000000000
+      internalID: 646183524386277448
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Buttons 32x32_31
+      rect:
+        serializedVersion: 2
+        x: 99
+        y: 33
+        width: 26
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b495033209033d740800000000000000
+      internalID: 5175533792402626891
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Buttons 32x32_32
+      rect:
+        serializedVersion: 2
+        x: 129
+        y: 11
+        width: 30
+        height: 38
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 898dc92ac35051600800000000000000
+      internalID: 438262296722856088
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Buttons 32x32_33
+      rect:
+        serializedVersion: 2
+        x: 161
+        y: 11
+        width: 30
+        height: 38
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d72474a126fcdd210800000000000000
+      internalID: 1359470682790380157
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      Buttons 32x32_0: -3289682402572544752
+      Buttons 32x32_1: -8708432058759913845
+      Buttons 32x32_10: -5570706303797486335
+      Buttons 32x32_11: -4982471148816629635
+      Buttons 32x32_12: 4157384976084670312
+      Buttons 32x32_13: 1078188806180510580
+      Buttons 32x32_14: 193999002375001544
+      Buttons 32x32_15: 5139417186494355295
+      Buttons 32x32_16: 2668017024924519062
+      Buttons 32x32_17: -8159112526038733691
+      Buttons 32x32_18: -7678266218861675227
+      Buttons 32x32_19: -2751330888853208375
+      Buttons 32x32_2: -2036501531233594296
+      Buttons 32x32_20: 8363653423998728926
+      Buttons 32x32_21: 1525740443987403072
+      Buttons 32x32_22: -1074272657812112578
+      Buttons 32x32_23: -2699361103893367602
+      Buttons 32x32_24: 6386864757385082332
+      Buttons 32x32_25: 7475515339080702889
+      Buttons 32x32_26: -8463550002915553406
+      Buttons 32x32_27: -3488205757615187381
+      Buttons 32x32_28: -4056484214592037514
+      Buttons 32x32_29: -1138180381958534819
+      Buttons 32x32_3: -2825063285732743503
+      Buttons 32x32_30: 646183524386277448
+      Buttons 32x32_31: 5175533792402626891
+      Buttons 32x32_32: 438262296722856088
+      Buttons 32x32_33: 1359470682790380157
+      Buttons 32x32_4: 2499303894879395700
+      Buttons 32x32_5: 4263028457466276189
+      Buttons 32x32_6: -1633472076505444120
+      Buttons 32x32_7: 3445719518148517927
+      Buttons 32x32_8: 7337211896497735516
+      Buttons 32x32_9: -2775209714907932872
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

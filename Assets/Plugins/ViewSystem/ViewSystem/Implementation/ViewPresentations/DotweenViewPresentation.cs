@@ -46,6 +46,7 @@ namespace ViewSystem.Implementation.ViewPresentations
         {
             sequence?.Kill();
             OnHidePresentationComplete?.Invoke(this);
+            Debug.Log("T");
         }
 
         protected virtual Sequence GetShowSequence(IAmViewStackItem previousViewStackItem)

@@ -6,11 +6,11 @@ using Zenject;
 public class PauseView : BasicView
 {
     [SerializeField]
-    private UIButton resumeButton;
+    private UIButtonBase resumeButton;
     [SerializeField]
-    private UIButton mainMenuButton;
+    private UIButtonBase mainMenuButton;
     [SerializeField]
-    private UIButton restartLevelButton;
+    private UIButtonBase restartLevelButton;
 
     public override bool Absolute => false;
 
@@ -18,7 +18,13 @@ public class PauseView : BasicView
     {
         base.Awake();
 
-        resumeButton.SetupButtonEvent(OnResumePerformed);
+        resumeButton.OnClickE += OnResumePerformed;
+    }
+
+    protected override void OnDestroy()
+    {
+        base.OnDestroy();
+        resumeButton.OnClickE -= OnResumePerformed;
     }
 
     private void OnResumePerformed()

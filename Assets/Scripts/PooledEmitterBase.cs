@@ -2,14 +2,23 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Pool;
+using Zenject;
 
 namespace BlueRacconGames.Pool
 {
     [Serializable]
     public abstract class PooledEmitterBase : MonoBehaviour, IPoolItemEmitter
     {
-        private readonly Dictionary<PoolItemBase, ObjectPool<PoolItemBase>> partcilePrefabToPoolLut = new Dictionary<PoolItemBase, ObjectPool<PoolItemBase>>();
-        private readonly Dictionary<PoolItemBase, ObjectPool<PoolItemBase>> partcileInstanceToPoolLut = new Dictionary<PoolItemBase, ObjectPool<PoolItemBase>>();
+        private DiContainer container;
+
+        private readonly Dictionary<PoolItemBase, ObjectPool<PoolItemBase>> partcilePrefabToPoolLut = new();
+        private readonly Dictionary<PoolItemBase, ObjectPool<PoolItemBase>> partcileInstanceToPoolLut = new();
+
+        [Inject]
+        private void Inject(DiContainer container)
+        {
+            this.container = container;
+        }
 
         public void Clear()
         {
@@ -56,10 +65,13 @@ namespace BlueRacconGames.Pool
 
         private PoolItemBase CreateItem(PoolItemBase item)
         {
-            GameObject newParticleGameObject = GameObject.Instantiate(item as MonoBehaviour).gameObject;
-            newParticleGameObject.transform.SetParent(transform);
-            PoolItemBase particlePoolItem = newParticleGameObject.GetComponent<PoolItemBase>();
-            return particlePoolItem;
+            GameObject newGameObject = GameObject.Instantiate(item as MonoBehaviour).gameObject;
+            newGameObject.transform.SetParent(transform);
+            PoolItemBase poolItem = newGameObject.GetComponent<PoolItemBase>();
+
+            container.Inject(poolItem);
+
+            return poolItem;
         }
     }
 }

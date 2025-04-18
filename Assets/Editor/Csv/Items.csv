@@ -1,0 +1,38 @@
+ID,IsDefault,Name,Description,,Base Buy Cost,Base Sell Cost,Max Stack Amount
+0,FALSE,Iron Ore,Taki se opis,,450,180,64
+1,FALSE,Iron Nugget,Taki se opis,,550,220,64
+2,FALSE,Iron Ingot,Taki se opis,,650,260,64
+3,FALSE,Saphire Ore,Taki se opis,,8000,3200,64
+4,FALSE,Saphire Nugget,Taki se opis,,9000,3600,64
+5,FALSE,Saphire Ingot,Taki se opis,,10000,4000,64
+6,FALSE,Bronze Ore,Taki se opis,,850,340,64
+7,FALSE,Bronze Nugget,Taki se opis,,950,380,64
+8,FALSE,Bronze Ingot,Taki se opis,,1100,440,64
+9,FALSE,Copper Ore,Taki se opis,,600,240,64
+10,FALSE,Copper Nugget,Taki se opis,,700,280,64
+11,FALSE,Copper Ingot,Taki se opis,,800,320,64
+12,FALSE,Gold Ore,Taki se opis,,2000,800,64
+13,FALSE,Gold Nugget,Taki se opis,,2200,880,64
+14,FALSE,Gold Ingot,Taki se opis,,2500,1000,64
+15,FALSE,Ruby Ore,Taki se opis,,10500,4200,64
+16,FALSE,Ruby Nugget,Taki se opis,,12000,4800,64
+17,FALSE,Ruby Ingot,Taki se opis,,14000,5600,64
+18,FALSE,Emerald Ore,Taki se opis,,6000,2400,64
+19,FALSE,Emerald Nugget,Taki se opis,,7000,2800,64
+20,FALSE,Emerald Ignot,Taki se opis,,8000,3200,64
+21,FALSE,Quartz Ore,Taki se opis,,4000,1600,64
+22,FALSE,Quartz Nugget,Taki se opis,,5000,2000,64
+23,FALSE,Quartz Ingot,Taki se opis,,6000,2400,64
+24,FALSE,Wood Log,Taki se opis,,200,80,64
+25,FALSE,Bone,Taki se opis,,300,120,64
+26,FALSE,Stick,Taki se opis,,50,20,64
+27,FALSE,Feather,Taki se opis,,300,120,64
+28,FALSE,Trash,Taki se opis,,0,0,64
+29,FALSE,Slime,Taki se opis,,350,140,64
+30,FALSE,Rock,Taki se opis,,250,100,64
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,, ,,

@@ -22,6 +22,7 @@ namespace BlueRacconGames.Animation
         private int animIDDie;
         private int animIDAttack;
 
+        private int toolLayer = 2;
         private int meleeCombatLayer = 1;
         private int baseAnimationLayer = 0;
 
@@ -68,6 +69,15 @@ namespace BlueRacconGames.Animation
             if (!hasAnimator) return;
 
             animator.Play(animIDAttack, meleeCombatLayer);
+        }
+
+        public void ToolAnimationByName(string name)
+        {
+            if (!hasAnimator) return;
+
+            var animId = Animator.StringToHash(name);
+
+            animator.Play(animId, toolLayer);
         }
 
         public bool GetBoolParameter(string name)

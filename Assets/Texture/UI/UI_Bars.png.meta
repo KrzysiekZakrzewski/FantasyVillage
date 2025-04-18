@@ -288,7 +288,7 @@ TextureImporter:
   platformSettings:
   - serializedVersion: 4
     buildTarget: DefaultTexturePlatform
-    maxTextureSize: 256
+    maxTextureSize: 512
     resizeAlgorithm: 0
     textureFormat: -1
     textureCompression: 0
@@ -319,13 +319,13 @@ TextureImporter:
       name: UI_Bars_0
       rect:
         serializedVersion: 2
-        x: 0
-        y: 117
-        width: 32
-        height: 11
+        x: 1
+        y: 118
+        width: 29
+        height: 3
       alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 1, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
@@ -341,12 +341,12 @@ TextureImporter:
       name: UI_Bars_1
       rect:
         serializedVersion: 2
-        x: 0
-        y: 107
-        width: 32
-        height: 11
+        x: 1
+        y: 108
+        width: 30
+        height: 9
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -363,12 +363,12 @@ TextureImporter:
       name: UI_Bars_2
       rect:
         serializedVersion: 2
-        x: 32
-        y: 113
-        width: 32
-        height: 15
+        x: 34
+        y: 118
+        width: 28
+        height: 3
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -385,12 +385,12 @@ TextureImporter:
       name: UI_Bars_3
       rect:
         serializedVersion: 2
-        x: 64
-        y: 113
-        width: 32
-        height: 15
+        x: 66
+        y: 118
+        width: 28
+        height: 3
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -407,12 +407,12 @@ TextureImporter:
       name: UI_Bars_4
       rect:
         serializedVersion: 2
-        x: 95
-        y: 102
-        width: 49
-        height: 21
+        x: 96
+        y: 103
+        width: 48
+        height: 19
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -429,12 +429,12 @@ TextureImporter:
       name: UI_Bars_5
       rect:
         serializedVersion: 2
-        x: 1
-        y: 88
-        width: 14
-        height: 8
+        x: 2
+        y: 89
+        width: 12
+        height: 6
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -451,12 +451,12 @@ TextureImporter:
       name: UI_Bars_6
       rect:
         serializedVersion: 2
-        x: 1
-        y: 80
-        width: 14
-        height: 8
+        x: 18
+        y: 89
+        width: 12
+        height: 6
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -473,12 +473,12 @@ TextureImporter:
       name: UI_Bars_7
       rect:
         serializedVersion: 2
-        x: 17
-        y: 88
-        width: 14
-        height: 8
+        x: 34
+        y: 89
+        width: 12
+        height: 6
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -495,12 +495,12 @@ TextureImporter:
       name: UI_Bars_8
       rect:
         serializedVersion: 2
-        x: 17
-        y: 80
-        width: 14
-        height: 8
+        x: 50
+        y: 89
+        width: 12
+        height: 6
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -517,12 +517,12 @@ TextureImporter:
       name: UI_Bars_9
       rect:
         serializedVersion: 2
-        x: 33
-        y: 88
-        width: 14
-        height: 8
+        x: 66
+        y: 89
+        width: 12
+        height: 6
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -539,12 +539,12 @@ TextureImporter:
       name: UI_Bars_10
       rect:
         serializedVersion: 2
-        x: 33
-        y: 80
-        width: 14
-        height: 8
+        x: 82
+        y: 89
+        width: 12
+        height: 6
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -561,12 +561,12 @@ TextureImporter:
       name: UI_Bars_11
       rect:
         serializedVersion: 2
-        x: 49
-        y: 88
-        width: 14
-        height: 8
+        x: 96
+        y: 71
+        width: 48
+        height: 19
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -583,12 +583,12 @@ TextureImporter:
       name: UI_Bars_12
       rect:
         serializedVersion: 2
-        x: 49
-        y: 80
-        width: 14
-        height: 8
+        x: 2
+        y: 81
+        width: 12
+        height: 6
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -605,12 +605,12 @@ TextureImporter:
       name: UI_Bars_13
       rect:
         serializedVersion: 2
-        x: 65
-        y: 88
-        width: 14
-        height: 8
+        x: 18
+        y: 81
+        width: 12
+        height: 6
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -627,12 +627,12 @@ TextureImporter:
       name: UI_Bars_14
       rect:
         serializedVersion: 2
-        x: 65
-        y: 80
-        width: 14
-        height: 8
+        x: 34
+        y: 81
+        width: 12
+        height: 6
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -649,12 +649,12 @@ TextureImporter:
       name: UI_Bars_15
       rect:
         serializedVersion: 2
-        x: 81
-        y: 88
-        width: 14
-        height: 8
+        x: 50
+        y: 81
+        width: 12
+        height: 6
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -671,12 +671,12 @@ TextureImporter:
       name: UI_Bars_16
       rect:
         serializedVersion: 2
-        x: 95
-        y: 70
-        width: 49
-        height: 21
+        x: 66
+        y: 81
+        width: 12
+        height: 6
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -693,12 +693,12 @@ TextureImporter:
       name: UI_Bars_17
       rect:
         serializedVersion: 2
-        x: 82
-        y: 81
-        width: 12
-        height: 6
+        x: 83
+        y: 82
+        width: 10
+        height: 4
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -715,12 +715,12 @@ TextureImporter:
       name: UI_Bars_18
       rect:
         serializedVersion: 2
-        x: 1
-        y: 72
-        width: 14
-        height: 8
+        x: 2
+        y: 73
+        width: 12
+        height: 6
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -737,12 +737,12 @@ TextureImporter:
       name: UI_Bars_19
       rect:
         serializedVersion: 2
-        x: 17
-        y: 72
-        width: 14
-        height: 8
+        x: 18
+        y: 73
+        width: 12
+        height: 6
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -759,12 +759,12 @@ TextureImporter:
       name: UI_Bars_20
       rect:
         serializedVersion: 2
-        x: 33
-        y: 72
-        width: 14
-        height: 8
+        x: 34
+        y: 73
+        width: 12
+        height: 6
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -781,12 +781,12 @@ TextureImporter:
       name: UI_Bars_21
       rect:
         serializedVersion: 2
-        x: 49
-        y: 72
-        width: 14
-        height: 8
+        x: 50
+        y: 73
+        width: 12
+        height: 6
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -803,12 +803,12 @@ TextureImporter:
       name: UI_Bars_22
       rect:
         serializedVersion: 2
-        x: 65
-        y: 72
-        width: 14
-        height: 8
+        x: 66
+        y: 73
+        width: 12
+        height: 6
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -825,12 +825,12 @@ TextureImporter:
       name: UI_Bars_23
       rect:
         serializedVersion: 2
-        x: 82
-        y: 73
-        width: 12
-        height: 6
+        x: 83
+        y: 74
+        width: 10
+        height: 4
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -847,12 +847,12 @@ TextureImporter:
       name: UI_Bars_24
       rect:
         serializedVersion: 2
-        x: 1
-        y: 64
-        width: 14
-        height: 8
+        x: 2
+        y: 65
+        width: 12
+        height: 6
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -869,12 +869,12 @@ TextureImporter:
       name: UI_Bars_25
       rect:
         serializedVersion: 2
-        x: 17
-        y: 64
-        width: 14
-        height: 8
+        x: 18
+        y: 65
+        width: 12
+        height: 6
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -891,12 +891,12 @@ TextureImporter:
       name: UI_Bars_26
       rect:
         serializedVersion: 2
-        x: 33
-        y: 64
-        width: 14
-        height: 8
+        x: 34
+        y: 65
+        width: 12
+        height: 6
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -913,12 +913,12 @@ TextureImporter:
       name: UI_Bars_27
       rect:
         serializedVersion: 2
-        x: 49
-        y: 64
-        width: 14
-        height: 8
+        x: 50
+        y: 65
+        width: 12
+        height: 6
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -935,12 +935,12 @@ TextureImporter:
       name: UI_Bars_28
       rect:
         serializedVersion: 2
-        x: 65
-        y: 64
-        width: 14
-        height: 8
+        x: 66
+        y: 65
+        width: 12
+        height: 6
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -957,12 +957,12 @@ TextureImporter:
       name: UI_Bars_29
       rect:
         serializedVersion: 2
-        x: 82
-        y: 65
-        width: 12
-        height: 6
+        x: 83
+        y: 66
+        width: 10
+        height: 4
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -979,12 +979,12 @@ TextureImporter:
       name: UI_Bars_30
       rect:
         serializedVersion: 2
-        x: 1
-        y: 56
-        width: 14
-        height: 8
+        x: 2
+        y: 57
+        width: 12
+        height: 6
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -1001,12 +1001,12 @@ TextureImporter:
       name: UI_Bars_31
       rect:
         serializedVersion: 2
-        x: 17
-        y: 56
-        width: 14
-        height: 8
+        x: 18
+        y: 57
+        width: 12
+        height: 6
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -1023,12 +1023,12 @@ TextureImporter:
       name: UI_Bars_32
       rect:
         serializedVersion: 2
-        x: 33
-        y: 56
-        width: 14
-        height: 8
+        x: 34
+        y: 57
+        width: 12
+        height: 6
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -1045,12 +1045,12 @@ TextureImporter:
       name: UI_Bars_33
       rect:
         serializedVersion: 2
-        x: 49
-        y: 56
-        width: 14
-        height: 8
+        x: 50
+        y: 57
+        width: 12
+        height: 6
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -1067,12 +1067,12 @@ TextureImporter:
       name: UI_Bars_34
       rect:
         serializedVersion: 2
-        x: 65
-        y: 56
-        width: 14
-        height: 8
+        x: 66
+        y: 57
+        width: 12
+        height: 6
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -1089,12 +1089,12 @@ TextureImporter:
       name: UI_Bars_35
       rect:
         serializedVersion: 2
-        x: 82
-        y: 57
-        width: 12
-        height: 6
+        x: 83
+        y: 58
+        width: 10
+        height: 4
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -1111,12 +1111,12 @@ TextureImporter:
       name: UI_Bars_36
       rect:
         serializedVersion: 2
-        x: 95
-        y: 10
-        width: 49
-        height: 49
+        x: 96
+        y: 39
+        width: 48
+        height: 19
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -1133,12 +1133,12 @@ TextureImporter:
       name: UI_Bars_37
       rect:
         serializedVersion: 2
-        x: 0
-        y: 40
-        width: 16
-        height: 8
+        x: 2
+        y: 49
+        width: 12
+        height: 6
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -1155,12 +1155,12 @@ TextureImporter:
       name: UI_Bars_38
       rect:
         serializedVersion: 2
-        x: 1
-        y: 48
-        width: 14
-        height: 8
+        x: 18
+        y: 49
+        width: 12
+        height: 6
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -1177,12 +1177,12 @@ TextureImporter:
       name: UI_Bars_39
       rect:
         serializedVersion: 2
-        x: 16
-        y: 40
-        width: 16
-        height: 8
+        x: 34
+        y: 49
+        width: 12
+        height: 6
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -1199,12 +1199,12 @@ TextureImporter:
       name: UI_Bars_40
       rect:
         serializedVersion: 2
-        x: 17
-        y: 48
-        width: 14
-        height: 8
+        x: 50
+        y: 49
+        width: 12
+        height: 6
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -1221,12 +1221,12 @@ TextureImporter:
       name: UI_Bars_41
       rect:
         serializedVersion: 2
-        x: 32
-        y: 40
-        width: 16
-        height: 8
+        x: 66
+        y: 49
+        width: 12
+        height: 6
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -1243,12 +1243,12 @@ TextureImporter:
       name: UI_Bars_42
       rect:
         serializedVersion: 2
-        x: 33
-        y: 48
+        x: 1
+        y: 41
         width: 14
-        height: 8
+        height: 6
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -1265,12 +1265,12 @@ TextureImporter:
       name: UI_Bars_43
       rect:
         serializedVersion: 2
-        x: 48
-        y: 40
-        width: 16
-        height: 8
+        x: 1
+        y: 34
+        width: 14
+        height: 6
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -1287,12 +1287,12 @@ TextureImporter:
       name: UI_Bars_44
       rect:
         serializedVersion: 2
-        x: 49
-        y: 48
+        x: 17
+        y: 41
         width: 14
-        height: 8
+        height: 6
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -1309,12 +1309,12 @@ TextureImporter:
       name: UI_Bars_45
       rect:
         serializedVersion: 2
-        x: 64
-        y: 40
-        width: 16
-        height: 8
+        x: 17
+        y: 34
+        width: 14
+        height: 6
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -1331,12 +1331,12 @@ TextureImporter:
       name: UI_Bars_46
       rect:
         serializedVersion: 2
-        x: 65
-        y: 48
+        x: 33
+        y: 41
         width: 14
-        height: 8
+        height: 6
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -1353,12 +1353,12 @@ TextureImporter:
       name: UI_Bars_47
       rect:
         serializedVersion: 2
-        x: 80
+        x: 33
         y: 34
-        width: 16
-        height: 14
+        width: 14
+        height: 6
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -1375,12 +1375,12 @@ TextureImporter:
       name: UI_Bars_48
       rect:
         serializedVersion: 2
-        x: 0
-        y: 33
-        width: 16
-        height: 8
+        x: 49
+        y: 41
+        width: 14
+        height: 6
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -1397,12 +1397,12 @@ TextureImporter:
       name: UI_Bars_49
       rect:
         serializedVersion: 2
-        x: 16
-        y: 33
-        width: 16
-        height: 8
+        x: 49
+        y: 34
+        width: 14
+        height: 6
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -1419,12 +1419,12 @@ TextureImporter:
       name: UI_Bars_50
       rect:
         serializedVersion: 2
-        x: 32
-        y: 33
-        width: 16
-        height: 8
+        x: 65
+        y: 41
+        width: 14
+        height: 6
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -1441,12 +1441,12 @@ TextureImporter:
       name: UI_Bars_51
       rect:
         serializedVersion: 2
-        x: 48
-        y: 33
-        width: 16
-        height: 8
+        x: 65
+        y: 34
+        width: 14
+        height: 6
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -1463,12 +1463,12 @@ TextureImporter:
       name: UI_Bars_52
       rect:
         serializedVersion: 2
-        x: 64
-        y: 33
-        width: 16
-        height: 8
+        x: 81
+        y: 35
+        width: 14
+        height: 12
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -1485,12 +1485,12 @@ TextureImporter:
       name: UI_Bars_53
       rect:
         serializedVersion: 2
-        x: 0
-        y: 24
-        width: 16
-        height: 8
+        x: 1
+        y: 25
+        width: 14
+        height: 6
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -1507,12 +1507,12 @@ TextureImporter:
       name: UI_Bars_54
       rect:
         serializedVersion: 2
-        x: 0
-        y: 17
-        width: 16
-        height: 8
+        x: 17
+        y: 25
+        width: 14
+        height: 6
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -1529,12 +1529,12 @@ TextureImporter:
       name: UI_Bars_55
       rect:
         serializedVersion: 2
-        x: 16
-        y: 24
-        width: 16
-        height: 8
+        x: 33
+        y: 25
+        width: 14
+        height: 6
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -1551,12 +1551,12 @@ TextureImporter:
       name: UI_Bars_56
       rect:
         serializedVersion: 2
-        x: 16
-        y: 17
-        width: 16
-        height: 8
+        x: 49
+        y: 25
+        width: 14
+        height: 6
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -1573,12 +1573,12 @@ TextureImporter:
       name: UI_Bars_57
       rect:
         serializedVersion: 2
-        x: 32
-        y: 24
-        width: 16
-        height: 8
+        x: 65
+        y: 25
+        width: 14
+        height: 6
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -1595,12 +1595,12 @@ TextureImporter:
       name: UI_Bars_58
       rect:
         serializedVersion: 2
-        x: 32
-        y: 17
-        width: 16
-        height: 8
+        x: 1
+        y: 18
+        width: 14
+        height: 6
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -1617,12 +1617,12 @@ TextureImporter:
       name: UI_Bars_59
       rect:
         serializedVersion: 2
-        x: 48
-        y: 24
-        width: 16
-        height: 8
+        x: 17
+        y: 18
+        width: 14
+        height: 6
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -1639,12 +1639,12 @@ TextureImporter:
       name: UI_Bars_60
       rect:
         serializedVersion: 2
-        x: 48
-        y: 17
-        width: 16
-        height: 8
+        x: 33
+        y: 18
+        width: 14
+        height: 6
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -1661,12 +1661,12 @@ TextureImporter:
       name: UI_Bars_61
       rect:
         serializedVersion: 2
-        x: 64
-        y: 24
-        width: 16
-        height: 8
+        x: 49
+        y: 18
+        width: 14
+        height: 6
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -1683,12 +1683,12 @@ TextureImporter:
       name: UI_Bars_62
       rect:
         serializedVersion: 2
-        x: 64
-        y: 17
-        width: 16
-        height: 8
+        x: 65
+        y: 18
+        width: 14
+        height: 6
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -1705,12 +1705,12 @@ TextureImporter:
       name: UI_Bars_63
       rect:
         serializedVersion: 2
-        x: 0
-        y: 8
-        width: 16
-        height: 8
+        x: 1
+        y: 9
+        width: 14
+        height: 6
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -1727,12 +1727,12 @@ TextureImporter:
       name: UI_Bars_64
       rect:
         serializedVersion: 2
-        x: 0
-        y: 1
-        width: 16
-        height: 8
+        x: 17
+        y: 9
+        width: 14
+        height: 6
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -1749,12 +1749,12 @@ TextureImporter:
       name: UI_Bars_65
       rect:
         serializedVersion: 2
-        x: 16
-        y: 8
-        width: 16
-        height: 8
+        x: 33
+        y: 9
+        width: 14
+        height: 6
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -1771,12 +1771,12 @@ TextureImporter:
       name: UI_Bars_66
       rect:
         serializedVersion: 2
-        x: 16
-        y: 1
-        width: 16
-        height: 8
+        x: 49
+        y: 9
+        width: 14
+        height: 6
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -1793,12 +1793,12 @@ TextureImporter:
       name: UI_Bars_67
       rect:
         serializedVersion: 2
-        x: 32
-        y: 8
-        width: 16
-        height: 8
+        x: 65
+        y: 9
+        width: 14
+        height: 6
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -1815,12 +1815,12 @@ TextureImporter:
       name: UI_Bars_68
       rect:
         serializedVersion: 2
-        x: 32
-        y: 1
-        width: 16
-        height: 8
+        x: 1
+        y: 2
+        width: 14
+        height: 6
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -1837,12 +1837,12 @@ TextureImporter:
       name: UI_Bars_69
       rect:
         serializedVersion: 2
-        x: 48
-        y: 8
-        width: 16
-        height: 8
+        x: 17
+        y: 2
+        width: 14
+        height: 6
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -1859,12 +1859,12 @@ TextureImporter:
       name: UI_Bars_70
       rect:
         serializedVersion: 2
-        x: 48
-        y: 1
-        width: 16
-        height: 8
+        x: 33
+        y: 2
+        width: 14
+        height: 6
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -1881,12 +1881,12 @@ TextureImporter:
       name: UI_Bars_71
       rect:
         serializedVersion: 2
-        x: 64
-        y: 8
-        width: 16
-        height: 8
+        x: 49
+        y: 2
+        width: 14
+        height: 6
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -1903,12 +1903,12 @@ TextureImporter:
       name: UI_Bars_72
       rect:
         serializedVersion: 2
-        x: 64
-        y: 1
-        width: 16
-        height: 8
+        x: 65
+        y: 2
+        width: 14
+        height: 6
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -1925,7 +1925,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 
+    spriteID: f6d3a845ae854d4409c55fcb2b095a0d
     internalID: 0
     vertices: []
     indices: 

@@ -12,8 +12,8 @@ TagManager:
   - Water
   - UI
   - Interactable
-  - 
-  - 
+  - HitObject
+  - PickUp
   - 
   - 
   - 
@@ -56,11 +56,14 @@ TagManager:
   - name: Enviroment
     uniqueID: 2908030821
     locked: 0
-  - name: Unit
-    uniqueID: 2697295711
-    locked: 0
   - name: Interactable
     uniqueID: 2614848839
+    locked: 0
+  - name: VFX
+    uniqueID: 3060661987
+    locked: 0
+  - name: Unit
+    uniqueID: 2697295711
     locked: 0
   m_RenderingLayers:
   - Default

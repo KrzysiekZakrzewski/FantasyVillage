@@ -8,30 +8,30 @@ namespace BlueRacconGames.InventorySystem
     public class GemsManager : MonoBehaviour
     {
         [SerializeField]
-        private GemsHUD hud;
+        private MoneyHUD hud;
         [SerializeField]
         private ParticlePoolItem pickUpParticle;
 
-        private ResourceSourcesPooledEmitter particleEmitter;
+        private DefaultPooledEmitter particleEmitter;
 
         public int GemsAmount {  get; private set; }
 
         [Inject]
-        private void Inject(ResourceSourcesPooledEmitter particleEmitter)
+        private void Inject(DefaultPooledEmitter particleEmitter)
         {
             this.particleEmitter = particleEmitter;
         }
 
         private void Awake()
         {
-            hud.RefreshGemsValue(0);//TO DO change to load
+            hud.UpdateMoneyAmount(0);//TO DO change to load
         }
 
         public bool AddGems(int amount, Vector2 position)
         {
             GemsAmount += amount;
 
-            hud.RefreshGemsValue(GemsAmount);
+            hud.UpdateMoneyAmount(GemsAmount);
 
             particleEmitter.EmitItem<ParticleSystem>(pickUpParticle, position);
 
@@ -45,7 +45,7 @@ namespace BlueRacconGames.InventorySystem
 
             GemsAmount -= amount;
 
-            hud.RefreshGemsValue(GemsAmount);
+            hud.UpdateMoneyAmount(GemsAmount);
 
             return true;
         }

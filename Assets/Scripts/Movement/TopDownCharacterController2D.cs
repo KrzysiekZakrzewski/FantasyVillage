@@ -1,4 +1,5 @@
 using BlueRacconGames.Animation;
+using BlueRacconGames.Events;
 using BlueRacconGames.Pool;
 using Interactable;
 using System;
@@ -23,13 +24,13 @@ namespace BlueRacconGames.Movement
         public Rigidbody2D Rb { get; private set; }
 
         public UnitAnimationControllerBase AnimationController { get; private set; }
-        public InteractorControllerBase InteractorController { get; private set; }
+        public InputInteractableController InputInteractorController { get; private set; }
 
         private void Awake()
         {
             Rb = GetComponent<Rigidbody2D>();
             AnimationController = GetComponent<UnitAnimationControllerBase>();
-            InteractorController = GetComponent<InteractorControllerBase>();
+            InputInteractorController = GetComponent<InputInteractableController>();
         }
 
         public void Move(float horizontal, float vertical, bool run)
@@ -60,7 +61,7 @@ namespace BlueRacconGames.Movement
 
             AnimationController.IdleAnimation(newDirection.x, newDirection.y);
 
-            InteractorController.ChangeDirection(direction);
+            InputInteractorController.ChangeDirection(direction);
         }
 
         private void Flip()

@@ -58,7 +58,7 @@ TextureImporter:
   maxTextureSize: 2048
   textureSettings:
     serializedVersion: 2
-    filterMode: 1
+    filterMode: 0
     aniso: 1
     mipBias: 0
     wrapU: 1
@@ -96,7 +96,7 @@ TextureImporter:
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
-    textureCompression: 1
+    textureCompression: 0
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -124,10 +124,10 @@ TextureImporter:
       name: Rock_6_Anim_0
       rect:
         serializedVersion: 2
-        x: 2
-        y: 2
-        width: 13
-        height: 12
+        x: 0
+        y: 0
+        width: 16
+        height: 16
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -146,10 +146,10 @@ TextureImporter:
       name: Rock_6_Anim_1
       rect:
         serializedVersion: 2
-        x: 18
-        y: 2
-        width: 13
-        height: 12
+        x: 16
+        y: 0
+        width: 16
+        height: 16
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -168,10 +168,10 @@ TextureImporter:
       name: Rock_6_Anim_2
       rect:
         serializedVersion: 2
-        x: 34
-        y: 2
-        width: 13
-        height: 12
+        x: 32
+        y: 0
+        width: 16
+        height: 16
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -190,10 +190,10 @@ TextureImporter:
       name: Rock_6_Anim_3
       rect:
         serializedVersion: 2
-        x: 49
-        y: 2
-        width: 14
-        height: 12
+        x: 48
+        y: 0
+        width: 16
+        height: 16
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -212,10 +212,10 @@ TextureImporter:
       name: Rock_6_Anim_4
       rect:
         serializedVersion: 2
-        x: 65
-        y: 2
-        width: 14
-        height: 12
+        x: 64
+        y: 0
+        width: 16
+        height: 16
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -234,10 +234,10 @@ TextureImporter:
       name: Rock_6_Anim_5
       rect:
         serializedVersion: 2
-        x: 81
-        y: 2
-        width: 14
-        height: 12
+        x: 80
+        y: 0
+        width: 16
+        height: 16
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -256,10 +256,10 @@ TextureImporter:
       name: Rock_6_Anim_6
       rect:
         serializedVersion: 2
-        x: 98
-        y: 2
-        width: 13
-        height: 12
+        x: 96
+        y: 0
+        width: 16
+        height: 16
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -278,10 +278,10 @@ TextureImporter:
       name: Rock_6_Anim_7
       rect:
         serializedVersion: 2
-        x: 114
-        y: 2
-        width: 13
-        height: 12
+        x: 112
+        y: 0
+        width: 16
+        height: 16
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -300,7 +300,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 
+    spriteID: 44dc2c26a2bbaf541be0bf69140f515f
     internalID: 0
     vertices: []
     indices: 
@@ -309,7 +309,15 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      Rock_6_Anim_0: 5212861743788058301
+      Rock_6_Anim_1: -7384873530943454501
+      Rock_6_Anim_2: -7430570856540705855
+      Rock_6_Anim_3: 5708560306639587928
+      Rock_6_Anim_4: 930652650963269959
+      Rock_6_Anim_5: -8270181395492568371
+      Rock_6_Anim_6: -1974264017330908192
+      Rock_6_Anim_7: 316404263251420951
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

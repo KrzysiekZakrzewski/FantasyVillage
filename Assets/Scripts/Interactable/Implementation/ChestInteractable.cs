@@ -1,34 +1,32 @@
 using BlueRacconGames.Animation;
-using BlueRacconGames.Inventory;
+using BlueRacconGames.InventorySystem;
 using Game.Item.Factory;
 using Game.View;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
+using ViewSystem;
 using Zenject;
 
 namespace Interactable.Implementation
 {
     public class ChestInteractable : InteractableBase
     {
-        [SerializeField]
-        private Animator animator;
-        [SerializeField]
-        private ChestInventory inventory = new();
+        [SerializeField] private Animator animator;
+        [SerializeField] private InventoryUniqueId inventoryId;
+        [SerializeField] private InventoryItem[] items;
         private readonly float transitionDuration = 0.1f;
         private bool canOpen = true;
         private bool isOpened = false;
 
-        private InventoryManager inventoryManager;
+        private GameViewManager gameViewManager;
+        private InventoryController inventoryController;
 
         [Inject]
-        private void Inject(InventoryManager inventoryManager)
+        private void Inject(GameViewManager gameViewManager, InventoryController inventoryController)
         {
-            this.inventoryManager = inventoryManager;
-        }
-
-        private void Awake()
-        {
-            inventory.Initialize(inventoryManager);
+            this.gameViewManager = gameViewManager;
+            this.inventoryController = inventoryController;
         }
 
         public override bool Interact(InteractorControllerBase interactor)
@@ -51,16 +49,25 @@ namespace Interactable.Implementation
 
             isOpened = true;
 
+            inventoryController.ImportInventory(inventoryId, items);
+
+            gameViewManager.OpenInventory(inventoryId);
+
             animator.CrossFade(AnimationHashIDs.OpenAnimationHash, transitionDuration);
 
-            inventoryManager.OpenSubInventory(inventory);
-            inventoryManager.InventoryUI.OnInventoryUIClosedE += Close;
+            gameViewManager.InventoryViewManager.Presentation.OnHidePresentationComplete += Close;
         }
 
-        public void Close()
+        private void Close(IAmViewPresentation viewPresentation)
         {
+            gameViewManager.InventoryViewManager.Presentation.OnHidePresentationComplete -= Close;
+
+            Debug.Log("UU");
+
             animator.CrossFade(AnimationHashIDs.CloseAnimationHash, transitionDuration);
-            inventoryManager.InventoryUI.OnInventoryUIClosedE -= Close;
+
+            items = inventoryController.ExportInventory(inventoryId);
+
             isOpened = false;
         }
     }

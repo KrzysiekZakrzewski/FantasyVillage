@@ -91,6 +91,15 @@ namespace Inputs
                     ""processors"": """",
                     ""interactions"": """",
                     ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""Use"",
+                    ""type"": ""Button"",
+                    ""id"": ""1daf48c4-a6bb-4040-a525-245a623054a2"",
+                    ""expectedControlType"": """",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
                 }
             ],
             ""bindings"": [
@@ -174,7 +183,7 @@ namespace Inputs
                 {
                     ""name"": """",
                     ""id"": ""c1f3f10e-6a27-49e3-bf1c-0efa3d771140"",
-                    ""path"": ""<Keyboard>/space"",
+                    ""path"": ""<Keyboard>/l"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": "";Keyboard"",
@@ -280,6 +289,17 @@ namespace Inputs
                     ""action"": ""Inventory"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""38724e31-ed7a-4c35-b533-cdc0d2c6f735"",
+                    ""path"": ""<Keyboard>/space"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Use"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
                 }
             ]
         },
@@ -373,6 +393,15 @@ namespace Inputs
                     ""type"": ""PassThrough"",
                     ""id"": ""cb6a06df-d9fe-474c-b6c4-394b2c0d1406"",
                     ""expectedControlType"": ""Quaternion"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""Close"",
+                    ""type"": ""Button"",
+                    ""id"": ""c8fa24a1-f3d6-45aa-9d3e-85955e001f15"",
+                    ""expectedControlType"": """",
                     ""processors"": """",
                     ""interactions"": """",
                     ""initialStateCheck"": false
@@ -796,6 +825,17 @@ namespace Inputs
                     ""action"": ""TrackedDeviceOrientation"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""c0047eaf-2c1b-4b1b-b720-18005cbfd431"",
+                    ""path"": ""<Keyboard>/escape"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": "";Keyboard"",
+                    ""action"": ""Close"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
                 }
             ]
         }
@@ -839,6 +879,7 @@ namespace Inputs
             m_Gameplay_DebugConsole = m_Gameplay.FindAction("DebugConsole", throwIfNotFound: true);
             m_Gameplay_Run = m_Gameplay.FindAction("Run", throwIfNotFound: true);
             m_Gameplay_Inventory = m_Gameplay.FindAction("Inventory", throwIfNotFound: true);
+            m_Gameplay_Use = m_Gameplay.FindAction("Use", throwIfNotFound: true);
             // UI
             m_UI = asset.FindActionMap("UI", throwIfNotFound: true);
             m_UI_Navigate = m_UI.FindAction("Navigate", throwIfNotFound: true);
@@ -851,6 +892,7 @@ namespace Inputs
             m_UI_RightClick = m_UI.FindAction("RightClick", throwIfNotFound: true);
             m_UI_TrackedDevicePosition = m_UI.FindAction("TrackedDevicePosition", throwIfNotFound: true);
             m_UI_TrackedDeviceOrientation = m_UI.FindAction("TrackedDeviceOrientation", throwIfNotFound: true);
+            m_UI_Close = m_UI.FindAction("Close", throwIfNotFound: true);
         }
 
         ~@Controls()
@@ -925,6 +967,7 @@ namespace Inputs
         private readonly InputAction m_Gameplay_DebugConsole;
         private readonly InputAction m_Gameplay_Run;
         private readonly InputAction m_Gameplay_Inventory;
+        private readonly InputAction m_Gameplay_Use;
         public struct GameplayActions
         {
             private @Controls m_Wrapper;
@@ -936,6 +979,7 @@ namespace Inputs
             public InputAction @DebugConsole => m_Wrapper.m_Gameplay_DebugConsole;
             public InputAction @Run => m_Wrapper.m_Gameplay_Run;
             public InputAction @Inventory => m_Wrapper.m_Gameplay_Inventory;
+            public InputAction @Use => m_Wrapper.m_Gameplay_Use;
             public InputActionMap Get() { return m_Wrapper.m_Gameplay; }
             public void Enable() { Get().Enable(); }
             public void Disable() { Get().Disable(); }
@@ -966,6 +1010,9 @@ namespace Inputs
                 @Inventory.started += instance.OnInventory;
                 @Inventory.performed += instance.OnInventory;
                 @Inventory.canceled += instance.OnInventory;
+                @Use.started += instance.OnUse;
+                @Use.performed += instance.OnUse;
+                @Use.canceled += instance.OnUse;
             }
 
             private void UnregisterCallbacks(IGameplayActions instance)
@@ -991,6 +1038,9 @@ namespace Inputs
                 @Inventory.started -= instance.OnInventory;
                 @Inventory.performed -= instance.OnInventory;
                 @Inventory.canceled -= instance.OnInventory;
+                @Use.started -= instance.OnUse;
+                @Use.performed -= instance.OnUse;
+                @Use.canceled -= instance.OnUse;
             }
 
             public void RemoveCallbacks(IGameplayActions instance)
@@ -1022,6 +1072,7 @@ namespace Inputs
         private readonly InputAction m_UI_RightClick;
         private readonly InputAction m_UI_TrackedDevicePosition;
         private readonly InputAction m_UI_TrackedDeviceOrientation;
+        private readonly InputAction m_UI_Close;
         public struct UIActions
         {
             private @Controls m_Wrapper;
@@ -1036,6 +1087,7 @@ namespace Inputs
             public InputAction @RightClick => m_Wrapper.m_UI_RightClick;
             public InputAction @TrackedDevicePosition => m_Wrapper.m_UI_TrackedDevicePosition;
             public InputAction @TrackedDeviceOrientation => m_Wrapper.m_UI_TrackedDeviceOrientation;
+            public InputAction @Close => m_Wrapper.m_UI_Close;
             public InputActionMap Get() { return m_Wrapper.m_UI; }
             public void Enable() { Get().Enable(); }
             public void Disable() { Get().Disable(); }
@@ -1075,6 +1127,9 @@ namespace Inputs
                 @TrackedDeviceOrientation.started += instance.OnTrackedDeviceOrientation;
                 @TrackedDeviceOrientation.performed += instance.OnTrackedDeviceOrientation;
                 @TrackedDeviceOrientation.canceled += instance.OnTrackedDeviceOrientation;
+                @Close.started += instance.OnClose;
+                @Close.performed += instance.OnClose;
+                @Close.canceled += instance.OnClose;
             }
 
             private void UnregisterCallbacks(IUIActions instance)
@@ -1109,6 +1164,9 @@ namespace Inputs
                 @TrackedDeviceOrientation.started -= instance.OnTrackedDeviceOrientation;
                 @TrackedDeviceOrientation.performed -= instance.OnTrackedDeviceOrientation;
                 @TrackedDeviceOrientation.canceled -= instance.OnTrackedDeviceOrientation;
+                @Close.started -= instance.OnClose;
+                @Close.performed -= instance.OnClose;
+                @Close.canceled -= instance.OnClose;
             }
 
             public void RemoveCallbacks(IUIActions instance)
@@ -1153,6 +1211,7 @@ namespace Inputs
             void OnDebugConsole(InputAction.CallbackContext context);
             void OnRun(InputAction.CallbackContext context);
             void OnInventory(InputAction.CallbackContext context);
+            void OnUse(InputAction.CallbackContext context);
         }
         public interface IUIActions
         {
@@ -1166,6 +1225,7 @@ namespace Inputs
             void OnRightClick(InputAction.CallbackContext context);
             void OnTrackedDevicePosition(InputAction.CallbackContext context);
             void OnTrackedDeviceOrientation(InputAction.CallbackContext context);
+            void OnClose(InputAction.CallbackContext context);
         }
     }
 }

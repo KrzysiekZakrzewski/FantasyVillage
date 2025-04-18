@@ -7,7 +7,7 @@ namespace Game.View
     public class CreditsView : BasicView
     {
         [SerializeField]
-        private UIButton backButton;
+        private UIButtonBase backButton;
         [SerializeField]
         private TextMeshProUGUI version;
 
@@ -19,7 +19,14 @@ namespace Game.View
 
             version.text = $"Version: {Application.version}";
 
-            backButton.SetupButtonEvent(OnClickBackPerformed);
+            backButton.OnClickE += OnClickBackPerformed;
+        }
+
+        protected override void OnDestroy()
+        {
+            base.OnDestroy();
+
+            backButton.OnClickE -= OnClickBackPerformed;
         }
 
         private void OnClickBackPerformed()

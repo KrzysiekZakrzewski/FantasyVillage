@@ -1,29 +1,37 @@
-using BlueRacconGames.Inventory;
+using BlueRacconGames.InventorySystem;
+using BlueRacconGames.Pool;
 using Game.Item.Factory;
 using Interactable;
 using System.Collections;
 using UnityEngine;
 using Zenject;
 
-public class ResourceInteractable : InteractableBase
+public class ResourceInteractable : InteractablePooledBase
 {
+    [SerializeField] private InventoryUniqueId inventoryId;
     [SerializeField] private ItemFactorySO itemData;
     [SerializeField] private Vector2 minSpawnForce, maxSpawnForce;
 
-    private float spawnPosY;
-
     private Rigidbody2D rb;
-    private InventoryManager inventoryManager;
+    private InventoryController inventoryController;
+    private MagnetInteractor magnetInteractor;
+
+    private float minSpawnForceDuration = 0.4f;
+    private float maxSpawnForceDuration = 0.5f;
 
     [Inject]
-    private void Inject(InventoryManager inventoryManager)
+    private void Inject(InventoryController inventoryController)
     {
-        this.inventoryManager = inventoryManager;
+        this.inventoryController = inventoryController;
     }
 
     private void Awake()
     {
-        LunchItem();
+        if (rb == null)
+            rb = GetComponent<Rigidbody2D>();
+
+        if (magnetInteractor == null)
+            magnetInteractor = GetComponent<MagnetInteractor>();
     }
 
     public override bool Interact(InteractorControllerBase interactor)
@@ -31,14 +39,14 @@ public class ResourceInteractable : InteractableBase
         if (!IsInteractable)
             return false;
 
-        var result = inventoryManager.PlayerInventory.AddItem(itemData);
+        bool result = inventoryController.AddItem(inventoryId, itemData);
 
         if (!result)
             return false;
 
         SwitchInteractable(false);
 
-        Destroy(gameObject, 0.1f);
+        Expire();
 
         return true;
     }
@@ -48,17 +56,29 @@ public class ResourceInteractable : InteractableBase
 
     }
 
-    private void LunchItem()
+    public override void Launch(IPoolItemEmitter sourceEmitter, Vector3 startPosition)
+    {
+        base.Launch(sourceEmitter, startPosition);
+
+        LaunchItem();
+    }
+
+    protected override void Expire()
+    {
+        base.Expire();
+
+        if (magnetInteractor == null) return;
+
+        magnetInteractor.SwitchCanUse(false);
+    }
+
+    private void LaunchItem()
     {
         SwitchInteractable(false);
 
-        if (rb == null)
-            rb = GetComponent<Rigidbody2D>();
-
-        spawnPosY = rb.position.y;
         rb.simulated = false;
 
-        StartCoroutine(LunchSequence());
+        StartCoroutine(LaunchItemSequence());
     }
 
     private Vector2 RandomizeSpawnForce()
@@ -71,17 +91,23 @@ public class ResourceInteractable : InteractableBase
         return new Vector2(spawnForceX, spawnForceY);
     }
 
-    private IEnumerator LunchSequence()
+    private IEnumerator LaunchItemSequence()
     {
         rb.simulated = true;
 
         rb.AddForce(RandomizeSpawnForce(), ForceMode2D.Impulse);
 
-        yield return new WaitUntil(() => rb.position.y < spawnPosY);
+        yield return new WaitForSeconds(Random.Range(minSpawnForceDuration, maxSpawnForceDuration));
 
-        rb.simulated = false;
+        rb.gravityScale = 0f;
         rb.linearVelocity = Vector2.zero;
 
+        yield return null;
+
         SwitchInteractable(true);
+
+        if (magnetInteractor == null) yield break;
+
+        magnetInteractor.SwitchCanUse(true);
     }
 }

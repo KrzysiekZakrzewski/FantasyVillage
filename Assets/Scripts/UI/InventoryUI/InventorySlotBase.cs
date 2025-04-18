@@ -1,115 +1,93 @@
-﻿using System;
-using TMPro;
-using Unity.VisualScripting;
+﻿using UnityEngine.EventSystems;
 using UnityEngine;
-using UnityEngine.EventSystems;
-using UnityEngine.UI;
+using Zenject;
 
-namespace BlueRacconGames.Inventory.UI
+namespace BlueRacconGames.InventorySystem
 {
-    public abstract class InventorySlotBase : MonoBehaviour, IInventorySlot
+    public abstract class InventorySlotBase : MonoBehaviour, IDropHandler, IPointerClickHandler, IPointerEnterHandler, IPointerExitHandler
     {
-        [SerializeField]
-        private Image itemIcon;
-        [SerializeField]
-        private Image slotIcon;
-        [SerializeField]
-        private TextMeshProUGUI countTxt;
-        [SerializeField]
-        private Color normalColor, highlightedColor;
+        [SerializeField] protected DefaultDraggableInventoryItem draggableItem;
 
-        private int id;
+        private GameObject pointerDragCache;
+        protected int slotId;
+        protected InventoryUniqueId inventoryId;
+        protected InventoryController inventoryController;
 
-        protected ValidStatus validStatus = ValidStatus.WaitForUpdate;
-
-        public event Action<IInventorySlot> OnSlotClickE;
-
-        public int Id => id;
-        public bool IsFree => !itemIcon.enabled;
-
-        public abstract SlotType Type { get; }
-        public ValidStatus ValidStatus { get => validStatus; set => validStatus = value; }
-
-        private void OnDisable()
+        [Inject]
+        private void Inject(InventoryController inventoryController)
         {
-            slotIcon.color = normalColor;
+            this.inventoryController = inventoryController;
         }
 
-        public void Initialize(Action<IInventorySlot> OnSlotClickedAction, int slotId)
+        public void Init(int slotId, InventoryUniqueId inventoryId)
         {
-            ValidStatus = ValidStatus.WaitForUpdate;
-            OnSlotClickE += OnSlotClickedAction;
-            id = slotId;
+            this.slotId = slotId;
+            this.inventoryId = inventoryId;
+
+            draggableItem.Init(transform, inventoryId, slotId);
         }
 
-        public void Refresh(InventoryManager inventoryManager)
+        public void UpdateSlot(InventoryItem inventoryItem)
         {
-            if (ValidStatus == ValidStatus.Valid) return;
+            if (draggableItem == null) return;
 
-            var item = inventoryManager.GetItemBySlotId(Id, Type);
+            if (inventoryItem.IsNullOrEmpty())
+            {
+                ClearSlot();
+                return;
+            }
 
-            ResetPosition();
-            ClearSlot();
-
-            ValidStatus = ValidStatus.Valid;
-
-            if (item != null)
-                AddItem(item);
-        }
-
-        public void AddItem(InventoryItem newInventoryItem)
-        {
-            itemIcon.sprite = newInventoryItem.Item.Icon;
-            itemIcon.enabled = true;
-
-            countTxt.text = newInventoryItem.Count > 1 ? newInventoryItem.Count.ToString() : "";
+            draggableItem.UpdateItem(inventoryItem.ItemFactory.Icon, inventoryItem.Amount);
         }
 
         public void ClearSlot()
         {
-            itemIcon.sprite = null;
-            itemIcon.enabled = false;
-            countTxt.text = "";
+            draggableItem.ClearItem();
         }
 
-        public void Move(Vector2 position)
+        public void OnDrop(PointerEventData eventData)
         {
-            if (IsFree) return;
+            DraggableInventoryItemBase draggableItem = GetCurrentDragItem(eventData);
 
-            itemIcon.transform.position = position;
-        }
+            pointerDragCache = null;
 
-        public void OnPointerEnter(PointerEventData eventData)
-        {
-            slotIcon.color = highlightedColor;
-        }
+            if (draggableItem.IsFree) return;
 
-        public void OnPointerExit(PointerEventData eventData)
-        {
-            slotIcon.color = normalColor;
+            OnItemDropped(draggableItem);
         }
 
         public void OnPointerClick(PointerEventData eventData)
         {
-            OnSlotClickE?.Invoke(this);
+            if (pointerDragCache == null || eventData.button != PointerEventData.InputButton.Right) return;
+
+            DraggableInventoryItemBase draggableItem = pointerDragCache.GetComponent<DraggableInventoryItemBase>();
+
+            if (draggableItem.IsFree) return;
+
+            OnRightButtonClick(draggableItem);
         }
 
-        public void Select()
+        protected abstract void OnItemDropped(DraggableInventoryItemBase draggableItem);
+
+        private void OnRightButtonClick(DraggableInventoryItemBase draggableItem)
         {
-            itemIcon.transform.SetParent(transform.root);
-            itemIcon.raycastTarget = false;
+            draggableItem.OnSlotItemRightClick(inventoryController, inventoryId, slotId);
         }
 
-        public void Deselect()
+        private DraggableInventoryItemBase GetCurrentDragItem(PointerEventData eventData)
         {
-            itemIcon.transform.SetParent(transform);
-            itemIcon.raycastTarget = true;
+            GameObject dropped = eventData.pointerDrag;
+
+            return dropped.GetComponent<DraggableInventoryItemBase>();
         }
 
-        public void ResetPosition()
+        public void OnPointerEnter(PointerEventData eventData)
         {
-            Deselect();
-            itemIcon.transform.localPosition = Vector3.zero;
+            pointerDragCache = eventData.pointerDrag;
+        }
+        public void OnPointerExit(PointerEventData eventData)
+        {
+            pointerDragCache = null;
         }
     }
 }

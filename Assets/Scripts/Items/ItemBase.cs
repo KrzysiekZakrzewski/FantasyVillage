@@ -23,14 +23,9 @@ namespace Game.Item
             icon = initialData.Icon;
         }
 
-        public bool CanUse()
+        public virtual void Dispose()
         {
-            throw new System.NotImplementedException();
-        }
-
-        public bool Use()
-        {
-            throw new System.NotImplementedException();
+            Debug.Log($"Item {Name} was destroyed!");
         }
     }
 }

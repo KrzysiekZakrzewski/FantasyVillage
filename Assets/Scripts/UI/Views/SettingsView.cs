@@ -16,7 +16,7 @@ namespace Game.View
         [SerializeField]
         private UIToogle vibrationButton;
         [SerializeField]
-        private UIButton backButton;
+        private UIButtonBase backButton;
 
         private SettingsManager settingsManager;
 
@@ -35,12 +35,18 @@ namespace Game.View
             SetupButtons();
         }
 
+        protected override void OnDestroy()
+        {
+            base.OnDestroy();
+            backButton.OnClickE -= OnBackPerformed;
+        }
+
         private void SetupButtons()
         {
             musicButton.SetupButtonEvent(OnMusicPerformed);
             SFXButton.SetupButtonEvent(OnSFXPerformed);
             vibrationButton.SetupButtonEvent(OnVibrationPerformed);
-            backButton.SetupButtonEvent(OnBackPerformed);
+            backButton.OnClickE += OnBackPerformed;
         }
 
         private void RefreshButtonsState()

@@ -81,7 +81,7 @@ TextureImporter:
   platformSettings:
   - serializedVersion: 4
     buildTarget: DefaultTexturePlatform
-    maxTextureSize: 256
+    maxTextureSize: 512
     resizeAlgorithm: 0
     textureFormat: -1
     textureCompression: 0
@@ -109,59 +109,15 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: UI_Premade_0
-      rect:
-        serializedVersion: 2
-        x: 35
-        y: 86
-        width: 194
-        height: 143
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: e0b1efbe58b1d3000800000000000000
-      internalID: 17200235583249166
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: UI_Premade_1
-      rect:
-        serializedVersion: 2
-        x: 107
-        y: 73
-        width: 122
-        height: 30
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: da03cf7c7d3c5d900800000000000000
-      internalID: 708687847921299629
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
       name: UI_Premade_2
       rect:
         serializedVersion: 2
-        x: 291
-        y: 81
-        width: 194
-        height: 148
+        x: 364
+        y: 106
+        width: 120
+        height: 122
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -178,12 +134,12 @@ TextureImporter:
       name: UI_Premade_3
       rect:
         serializedVersion: 2
-        x: 363
-        y: 69
-        width: 122
-        height: 32
+        x: 364
+        y: 70
+        width: 120
+        height: 30
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -200,7 +156,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 
+    spriteID: 2f1db5a6a2bfa744a90f3d1381786a7d
     internalID: 0
     vertices: []
     indices: 

@@ -1,4 +1,4 @@
-using BlueRacconGames.MeleeCombat;
+using BlueRacconGames.HitEffect.Factory;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -8,6 +8,5 @@ namespace Game.Item.Factory.Implementation
     {
         [field: SerializeField]
         public List<MeleeWeaponTargetEffectFactorySO> MeleeWeaponTargetEffectFactory {  get; set; }
-        public abstract override IItemRuntimeLogic CreateItem();
     }
 }

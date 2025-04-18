@@ -8,12 +8,12 @@ namespace BlueRacconGames.Resources
 {
     public abstract class ResourcesSourceAreaBase : MonoBehaviour, IResourcesSourceArea
     {
-        [SerializeField] protected ResourceSourcesPooledEmitter emitter;
+        [SerializeField] protected DefaultPooledEmitter emitter;
         [SerializeField] protected int maxResourcesSourceAmount;
-        [SerializeField] protected ResourcesDataSO[] resourceSourcesDatas;
+        [SerializeField] protected ResourceSourceSpawnDataSO[] resourceSourcesDatas;
 
         protected List<Vector2Int> avaiablePositions;
-        protected Dictionary<Vector2Int, ResourcesDataSO> resourceSourcesLUT = new();
+        protected Dictionary<Vector2Int, ResourceSourceSpawnDataSO> resourceSourcesLUT = new();
 
         protected virtual void Awake()
         {
@@ -40,22 +40,22 @@ namespace BlueRacconGames.Resources
 
             var position = new Vector3(cellPosition.x, cellPosition.y);
 
-            var resourceData = GetRandomResourceSource();
+            var resourceSourceData = GetRandomResourceSource();
 
-            if (resourceData == null) return;
+            if (resourceSourceData == null) return;
 
-            var spawnedSource = emitter.EmitItem<DestructableResourceSource>(resourceData.Prefab, position);
+            var spawnedSource = emitter.EmitItem<DestructableResourceSource>(resourceSourceData.Prefab, position);
 
             spawnedSource.SetSortingOrder();
 
-            resourceSourcesLUT.Add(cellPosition, resourceData);
+            resourceSourcesLUT.Add(cellPosition, resourceSourceData);
 
             UpdateAvaiablePositions(cellPosition);
         }
 
         protected abstract void UpdateAvaiablePositions(Vector2Int position);
         protected abstract Vector2Int GetSpawnPosition();
-        protected abstract ResourcesDataSO GetRandomResourceSource();
+        protected abstract ResourceSourceSpawnDataSO GetRandomResourceSource();
 
         private void SortBySpawnChance()
         {

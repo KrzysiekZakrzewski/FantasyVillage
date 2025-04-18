@@ -58,7 +58,7 @@ TextureImporter:
   maxTextureSize: 2048
   textureSettings:
     serializedVersion: 2
-    filterMode: 1
+    filterMode: 0
     aniso: 1
     mipBias: 0
     wrapU: 1
@@ -72,7 +72,7 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 100
+  spritePixelsToUnits: 16
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -96,7 +96,7 @@ TextureImporter:
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
-    textureCompression: 1
+    textureCompression: 0
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -309,7 +309,15 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      House_2_Stone_Stages_0: -7422710201508335196
+      House_2_Stone_Stages_1: -773113956279481801
+      House_2_Stone_Stages_2: 1928008603490557713
+      House_2_Stone_Stages_3: -4157265748770100557
+      House_2_Stone_Stages_4: 6625829361615447493
+      House_2_Stone_Stages_5: 289887219816584506
+      House_2_Stone_Stages_6: -5183870897085170672
+      House_2_Stone_Stages_7: 1876027975397020635
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

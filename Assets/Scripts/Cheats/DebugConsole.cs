@@ -2,57 +2,41 @@ using System.Collections.Generic;
 using UnityEngine;
 using System;
 using Inputs;
-using Damageable.Implementation;
+using Cheats.Console.Command;
+using BlueRacconGames.Pool;
+using BlueRacconGames.Resources;
+using UnityEngine.UIElements;
+using BlueRacconGames.Resources.Data;
+using Unity.VisualScripting;
 
 namespace Cheats.Console
 {
     public class DebugConsole : MonoBehaviour
     {
+        [SerializeField] private DebugCommandFactorySO[] commandFactoryArray;
+        [SerializeField] private DefaultPooledEmitter pooledEmitter;
+        [SerializeField] private ResourceSourceSpawnDataSO[] resourceData;
+        [SerializeField] private Vector3 spawnOffset;
         private bool showConsole;
         private bool showHelp;
         private string input;
         Vector2 scroll;
 
-        private PlayerDamagable playerDamagable;
-
         [NonSerialized]
         private PlayerInput playerInput;
 
-        public List<object> commandList { private set; get; }
-
-        public static DebugCommand<int> TAKEDAMAGE { private set; get; }
-        public static DebugCommand<int> HEAL { private set; get; }
-        public static DebugCommand<int> ADDITEM { private set; get; }
-        public static DebugCommand HELP { private set; get; }
+        private List<IDebugCammand> commandList;
 
         private void Awake()
         {
             SetupInputs();
-
             GetReferences();
 
-            HELP = new DebugCommand("help", "Show help", "help", () =>
+            for(int i = 0; i < resourceData.Length; i++)
             {
-                showHelp = true;
-            });
 
-            TAKEDAMAGE = new DebugCommand<int>("takedamage", "Player take x damage!", "takedamage", (x) =>
-            {
-                Debug.Log($"Zada³em {x} obra¿eñ!");
-                playerDamagable.TakeDamage(x);
-            });
-
-            HEAL = new DebugCommand<int>("heal", "Player heal x health!", "heal", (x) =>
-            {
-                Debug.Log($"Uleczy³em {x} obra¿eñ!");
-            });
-
-            commandList = new List<object>
-            {
-                HELP,
-                HEAL,
-                TAKEDAMAGE
-            };
+                pooledEmitter.EmitItem<DestructableResourceSource>(resourceData[i].Prefab, spawnOffset * i);
+            }
         }
 
         private void OnDestroy()
@@ -107,7 +91,17 @@ namespace Cheats.Console
 
         private void GetReferences()
         {
-            playerDamagable = FindAnyObjectByType<PlayerDamagable>();
+
+        }
+
+        private void CreateCommands()
+        {
+            foreach(DebugCommandFactorySO commandFactorySO in commandFactoryArray)
+            {
+                var command = commandFactorySO.CreateCommand();
+
+                commandList.Add(command);
+            }
         }
 
         private void OnGUI()

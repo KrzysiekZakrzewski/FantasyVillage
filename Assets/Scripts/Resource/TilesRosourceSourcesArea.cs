@@ -42,11 +42,11 @@ namespace BlueRacconGames.Resources
             }
         }
 
-        protected override ResourcesDataSO GetRandomResourceSource()
+        protected override ResourceSourceSpawnDataSO GetRandomResourceSource()
         {
             var randomizeValue = Random.value;
 
-            ResourcesDataSO resourcesData = null;
+            ResourceSourceSpawnDataSO resourcesData = null;
 
             for(int i = 0; i < resourceSourcesDatas.Length; i++)
             {

@@ -2,17 +2,28 @@
 
 namespace Cheats.Console
 {
-    public class DebugCommandBase
+    public interface IDebugCammand
     {
-        public string CommandId { private set; get; }
-        public string CommandDescrition { private set; get; }
-        public string CommandFormat { private set; get; }
+        string CommandId { get; }
+        string CommandDescrition { get; }
+        string CommandFormat { get; }
+    }
+
+    public class DebugCommandBase : IDebugCammand
+    {
+        private string commandId;
+        private string commandDescrition;
+        private string commandFormat;
+
+        public string CommandId => commandId;
+        public string CommandDescrition => commandDescrition;
+        public string CommandFormat => commandFormat;
 
         public DebugCommandBase(string id, string description, string format)
         {
-            CommandId = id;
-            CommandDescrition = description;
-            CommandFormat = format;
+            commandId = id;
+            commandDescrition = description;
+            commandFormat = format;
         }
     }
 

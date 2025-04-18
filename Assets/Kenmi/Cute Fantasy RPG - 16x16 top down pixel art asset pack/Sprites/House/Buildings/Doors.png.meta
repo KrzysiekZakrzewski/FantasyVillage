@@ -250,7 +250,7 @@ TextureImporter:
   maxTextureSize: 2048
   textureSettings:
     serializedVersion: 2
-    filterMode: 1
+    filterMode: 0
     aniso: 1
     mipBias: 0
     wrapU: 1
@@ -264,7 +264,7 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 100
+  spritePixelsToUnits: 16
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -288,7 +288,7 @@ TextureImporter:
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
-    textureCompression: 1
+    textureCompression: 0
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -1909,7 +1909,79 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      Doors_0: -2869115396899081085
+      Doors_1: -4950680412457382125
+      Doors_10: -5781459323266683018
+      Doors_11: 4013838309548243280
+      Doors_12: 6058396264252233748
+      Doors_13: -292930424708612062
+      Doors_14: 7957475137381874638
+      Doors_15: -2979870963503791069
+      Doors_16: 6799590333963578033
+      Doors_17: -1439220091796095235
+      Doors_18: -7378557487427283693
+      Doors_19: 647500809055624950
+      Doors_2: -551082938411016477
+      Doors_20: -425123437713995227
+      Doors_21: -2752050624415752279
+      Doors_22: -4954721434361786270
+      Doors_23: -487793327036657841
+      Doors_24: -1470048950884179821
+      Doors_25: -2349636604960124383
+      Doors_26: 5866718094668153772
+      Doors_27: -4641932674285640243
+      Doors_28: 7438595533382924562
+      Doors_29: -374686796413403749
+      Doors_3: 3499683669041570755
+      Doors_30: 5780870785757574232
+      Doors_31: 1045728838069403881
+      Doors_32: -4423864061822312148
+      Doors_33: -419212661044768440
+      Doors_34: 9000920452700082937
+      Doors_35: -2181127038475549901
+      Doors_36: -5985014064384330919
+      Doors_37: -5582795305722678712
+      Doors_38: 3186381390482476937
+      Doors_39: -7961668464050286665
+      Doors_4: 3230424311799132286
+      Doors_40: -8238532625120178340
+      Doors_41: -553928127886444998
+      Doors_42: 1668282704540702501
+      Doors_43: -9175405416907720816
+      Doors_44: -6340414936548395534
+      Doors_45: -6293874354000194789
+      Doors_46: 1982404972056001980
+      Doors_47: -488297035945598598
+      Doors_48: -3867568897572025320
+      Doors_49: -3118406385697596700
+      Doors_5: 1496226213467112817
+      Doors_50: 3683750499865314044
+      Doors_51: -2007542785875765457
+      Doors_52: -7522568132764638551
+      Doors_53: 4845995313263082868
+      Doors_54: -3698568783189593624
+      Doors_55: -489014480125750817
+      Doors_56: -8040691102768069349
+      Doors_57: -3927519215175972866
+      Doors_58: -6971363725331644905
+      Doors_59: 8061139304236626041
+      Doors_6: -3834454974551121022
+      Doors_60: -5908583719615862449
+      Doors_61: 4839260131696102017
+      Doors_62: -2666109997304914319
+      Doors_63: 2430265401186426226
+      Doors_64: 7843670387294435452
+      Doors_65: 211473795206577581
+      Doors_66: 1177937451630483447
+      Doors_67: 4197507987601311124
+      Doors_68: 1445586386881096577
+      Doors_69: 4721707747313362861
+      Doors_7: -6315338081298181389
+      Doors_70: 7515717611548870505
+      Doors_71: -5660431025605446091
+      Doors_8: 8742920937583391322
+      Doors_9: 552913712910371407
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

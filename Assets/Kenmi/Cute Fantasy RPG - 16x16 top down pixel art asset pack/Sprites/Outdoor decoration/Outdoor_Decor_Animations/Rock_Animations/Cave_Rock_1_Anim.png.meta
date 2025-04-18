@@ -58,7 +58,7 @@ TextureImporter:
   maxTextureSize: 2048
   textureSettings:
     serializedVersion: 2
-    filterMode: 1
+    filterMode: 0
     aniso: 1
     mipBias: 0
     wrapU: 1
@@ -96,7 +96,7 @@ TextureImporter:
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
-    textureCompression: 1
+    textureCompression: 0
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -124,10 +124,10 @@ TextureImporter:
       name: Cave_Rock_1_Anim_0
       rect:
         serializedVersion: 2
-        x: 1
-        y: 3
-        width: 14
-        height: 9
+        x: 0
+        y: 0
+        width: 16
+        height: 16
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -146,10 +146,10 @@ TextureImporter:
       name: Cave_Rock_1_Anim_1
       rect:
         serializedVersion: 2
-        x: 17
-        y: 3
-        width: 14
-        height: 9
+        x: 16
+        y: 0
+        width: 16
+        height: 16
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -168,10 +168,10 @@ TextureImporter:
       name: Cave_Rock_1_Anim_2
       rect:
         serializedVersion: 2
-        x: 33
-        y: 3
-        width: 14
-        height: 9
+        x: 32
+        y: 0
+        width: 16
+        height: 16
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -190,10 +190,10 @@ TextureImporter:
       name: Cave_Rock_1_Anim_3
       rect:
         serializedVersion: 2
-        x: 49
-        y: 3
-        width: 13
-        height: 9
+        x: 48
+        y: 0
+        width: 16
+        height: 16
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -212,10 +212,10 @@ TextureImporter:
       name: Cave_Rock_1_Anim_4
       rect:
         serializedVersion: 2
-        x: 65
-        y: 3
-        width: 12
-        height: 9
+        x: 64
+        y: 0
+        width: 16
+        height: 16
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -234,10 +234,10 @@ TextureImporter:
       name: Cave_Rock_1_Anim_5
       rect:
         serializedVersion: 2
-        x: 81
-        y: 3
-        width: 13
-        height: 9
+        x: 80
+        y: 0
+        width: 16
+        height: 16
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -256,10 +256,10 @@ TextureImporter:
       name: Cave_Rock_1_Anim_6
       rect:
         serializedVersion: 2
-        x: 97
-        y: 3
-        width: 13
-        height: 9
+        x: 96
+        y: 0
+        width: 16
+        height: 16
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -278,10 +278,10 @@ TextureImporter:
       name: Cave_Rock_1_Anim_7
       rect:
         serializedVersion: 2
-        x: 113
-        y: 3
-        width: 13
-        height: 9
+        x: 112
+        y: 0
+        width: 16
+        height: 16
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -300,7 +300,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 
+    spriteID: 16523630d85dde348a67db09cfca21f7
     internalID: 0
     vertices: []
     indices: 
@@ -309,7 +309,15 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      Cave_Rock_1_Anim_0: -4853538951904617961
+      Cave_Rock_1_Anim_1: 6831394162663988761
+      Cave_Rock_1_Anim_2: -2621204761347295374
+      Cave_Rock_1_Anim_3: -8524423812864683714
+      Cave_Rock_1_Anim_4: 9143930641275514172
+      Cave_Rock_1_Anim_5: 2610343648027062485
+      Cave_Rock_1_Anim_6: -1707668583275422010
+      Cave_Rock_1_Anim_7: 6151206553172999357
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

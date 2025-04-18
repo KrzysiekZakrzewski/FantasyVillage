@@ -13,13 +13,13 @@ namespace Game.View
         private MainMenuManager mainMenuManager;
 
         [SerializeField]
-        private UIButton playButton;
+        private UIButtonBase playButton;
         [SerializeField]
-        private UIButton settingsButton;
+        private UIButtonBase settingsButton;
         [SerializeField]
-        private UIButton creditsButton;
+        private UIButtonBase creditsButton;
         [SerializeField]
-        private UIButton quitButton;
+        private UIButtonBase quitButton;
         [SerializeField]
         private SettingsView settingsView;
         [SerializeField]
@@ -39,14 +39,18 @@ namespace Game.View
         protected override void OnDestroy()
         {
             base.OnDestroy();
+            playButton.OnClickE -= PlayButton_OnPerformed;
+            settingsButton.OnClickE -= SettingsButton_OnPerformed;
+            creditsButton.OnClickE -= CreditsButton_OnPerformed;
+            quitButton.OnClickE -= TryQuitButton_OnPerformed;
         }
 
         private void SetupButtons()
         {
-            playButton.SetupButtonEvent(PlayButton_OnPerformed);
-            settingsButton.SetupButtonEvent(SettingsButton_OnPerformed);
-            creditsButton.SetupButtonEvent(CreditsButton_OnPerformed);
-            quitButton.SetupButtonEvent(TryQuitButton_OnPerformed);
+            playButton.OnClickE += PlayButton_OnPerformed;
+            settingsButton.OnClickE += SettingsButton_OnPerformed;
+            creditsButton.OnClickE += CreditsButton_OnPerformed;
+            quitButton.OnClickE += TryQuitButton_OnPerformed;
         }
 
         private void PlayButton_OnPerformed()

@@ -5,7 +5,6 @@ using BlueRacconGames.AI.Implementation;
 using Pathfinding;
 using System;
 using UnityEngine;
-using BlueRacconGames.Animation;
 
 namespace BlueRacconGames.AI
 {

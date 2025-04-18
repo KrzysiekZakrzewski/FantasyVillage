@@ -1,0 +1,18 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8781fca4d606ff84d8e1b8928dfed489, type: 3}
+  m_Name: BigRockDestructableDataSO
+  m_EditorClassIdentifier: 
+  <TargetType>k__BackingField: {fileID: 11400000, guid: c1eb57b0807f4a84e84a887bef121e04, type: 2}
+  <GetHitTargetEffectFactory>k__BackingField:
+  - {fileID: 11400000, guid: e2adad1aa03b4154ea44eb027c16b6b8, type: 2}
+  <HitPointsToDestroy>k__BackingField: 6
