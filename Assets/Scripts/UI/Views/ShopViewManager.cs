@@ -9,12 +9,18 @@ namespace Game.View
     {
         [SerializeField] private UIButtonBase closeButton;
 
-        private List<ShopViewBase> shopViews;
+        [SerializeField] private List<ShopViewBase> shopViews = new();
 
         protected override void Awake()
         {
             base.Awake();
 
+            for(int i = 0; i < shopViews.Count; i++)
+            {
+                shopViews[i].Init();
+            }
+
+            //GatherViews();
             closeButton.OnClickE += CloseShopPanel;
         }
         protected override void OnDestroy()
@@ -35,7 +41,7 @@ namespace Game.View
         {
             Clear();
 
-            ParentStack.TryPopSafe();
+            ParentStack.ClearStack();
         }
         private void GatherViews()
         {

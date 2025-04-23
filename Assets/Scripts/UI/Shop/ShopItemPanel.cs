@@ -7,20 +7,17 @@ using DG.Tweening;
 
 namespace Game.UI.Shop
 {
-    public class ShopItemPanel : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler, IPointerClickHandler
+    public class ShopItemPanel : UIButtonBase
     {
         [SerializeField] private TextMeshProUGUI itemNameTxt;
         [SerializeField] private Image itemIcon;
         [SerializeField] private TextMeshProUGUI itemCostTxt;
 
         private Vector3 endScale = new(1.1f, 1.1f, 1f);
-        private float scaleDuration = 0.2f;
 
         protected int slotId;
 
-        private Tween tween;
-
-        public event Action<int> OnClickE;
+        new public event Action<int> OnClickE;
 
         public void SetupPanel(int slotId, string name, Sprite icon, int cost, Action<int> onClick)
         {
@@ -31,19 +28,37 @@ namespace Game.UI.Shop
             OnClickE += onClick;
         }
 
-        public void OnPointerClick(PointerEventData eventData)
+        public override void OnPointerClick(PointerEventData eventData)
         {
+            base.OnPointerClick(eventData);
+
             OnClickE?.Invoke(slotId);
         }
 
-        public void OnPointerEnter(PointerEventData eventData)
+        public override void OnPointerEnter(PointerEventData eventData)
         {
-            tween = transform.DOScale(endScale, scaleDuration).SetEase(Ease.OutBack); ;
+            base.OnPointerEnter(eventData);
+
+            transform.DOScale(endScale, duration).SetEase(Ease.OutBack);
         }
 
-        public void OnPointerExit(PointerEventData eventData)
+        public override void OnPointerExit(PointerEventData eventData)
         {
-            transform.DOScale(Vector3.one, scaleDuration).SetEase(Ease.InBack); ;
+            base.OnPointerExit(eventData);
+
+            transform.DOScale(baseScale, duration).SetEase(Ease.InBack); ;
+        }
+
+        public override void OnPointerDown(PointerEventData eventData)
+        {
+            transform.DOScale(baseScale, duration).SetEase(Ease.OutBack);
+        }
+
+        public override void OnPointerUp(PointerEventData eventData)
+        {
+            Vector3 scale = isHighlighted ? endScale : baseScale;
+
+            transform.DOScale(scale, duration).SetEase(Ease.InBack);
         }
     }
 }

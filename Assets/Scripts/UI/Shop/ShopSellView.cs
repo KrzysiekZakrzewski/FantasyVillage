@@ -50,9 +50,9 @@ namespace Game.View
             }
         }
 
-        private void UpdateItem(InventoryItem item, int amount)
+        private void UpdateItem(ItemFactorySO item, int amount)
         {
-            if (!shopItemPanels.TryGetValue(item.ItemFactory, out var shopItem) && amount > 0)
+            if (!shopItemPanels.TryGetValue(item, out var shopItem) && amount > 0)
             {
                 SpawnIcon(item);
                 return;
@@ -61,13 +61,15 @@ namespace Game.View
             if(amount <= 0)
             {
                 Destroy(shopItem.gameObject);
-                shopItemPanels.Remove(item.ItemFactory);
+                shopItemPanels.Remove(item);
                 return;
             }
 
             ShopSellItemPanel shopSellItem = shopItem as ShopSellItemPanel;
 
-            shopSellItem.UpdateAmount(item.SlotId, amount);
+            var inventoryItem = shopManager.GetItemFromInventory(item);
+
+            shopSellItem.UpdateAmount(inventoryItem.SlotId, amount);
         }
 
         private void SpawnIcon(InventoryItem item)

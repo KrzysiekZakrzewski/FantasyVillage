@@ -24,7 +24,7 @@ namespace Game.Managers
         public event Action<Dictionary<int, ItemFactorySO>> OnItemsGeneratedE;
         public event Action<int, int> OnAmountChangedE;
         public event Action<ItemFactorySO> OnItemChangedE;
-        public event Action<InventoryItem, int> OnTransactionValidateE;
+        public event Action<ItemFactorySO, int> OnTransactionValidateE;
 
         public InventoryController InventoryController => inventoryController;
 
@@ -37,6 +37,8 @@ namespace Game.Managers
 
         public bool TryBuyItem()
         {
+            if (currentItemSelected == null) return false;
+
             int totalCost = currentItemSelected.BaseBuyCost * itemAmount;
 
             if (!CanBuyValidate(totalCost)) return false;
@@ -134,7 +136,7 @@ namespace Game.Managers
         }
         public int GetItemAmount(InventoryItem item)
         {
-            return inventoryController.CountItems(inventoryId, item.ItemFactory);
+            return item != null ? inventoryController.CountItems(inventoryId, item.ItemFactory) : 0;
         }
         public void OnShopStateSwiped(ShopState shopState)
         {
@@ -158,9 +160,11 @@ namespace Game.Managers
         {
             InventoryItem item = GetItemFromInventory(currentItemSelected);
 
-            int itemAmount = GetItemAmount(item);
+            int itemAmount = item == null ? 0 : GetItemAmount(item);
 
-            OnTransactionValidateE?.Invoke(item, itemAmount);
+            OnTransactionValidateE?.Invoke(currentItemSelected, itemAmount);
+
+            OnAmountChangedE?.Invoke(this.itemAmount, CalculateTotalCost());
 
             if (itemAmount == 0)
                 ClearItem();

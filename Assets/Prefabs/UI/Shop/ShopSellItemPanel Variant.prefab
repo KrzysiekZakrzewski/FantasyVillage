@@ -372,6 +372,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a2836839ff2775a4e971a2540f0a36d5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  buttonImage: {fileID: 8263948888131373082}
+  normalColor: {r: 1, g: 1, b: 1, a: 1}
+  highlightedColor: {r: 0.9, g: 0.9, b: 0.9, a: 1}
+  disabledColor: {r: 0.7843137, g: 0.7843137, b: 0.7843137, a: 0.5019608}
   itemNameTxt: {fileID: 3414239066455741505}
   itemIcon: {fileID: 2443820734314548706}
   itemCostTxt: {fileID: 4597720878032879929}
@@ -386,5 +390,16 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &8263948888131373082 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 3018305072434006737, guid: f08742aa1a7e9f4468a32e08a254af8b, type: 3}
+  m_PrefabInstance: {fileID: 6578736245587722955}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
