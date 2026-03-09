@@ -634,7 +634,28 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      Slime_Small_Red_0: 3889767076933404985
+      Slime_Small_Red_1: -6354998587378008651
+      Slime_Small_Red_10: -2297200980812094921
+      Slime_Small_Red_11: -1266838911714744651
+      Slime_Small_Red_12: 1013134199773410817
+      Slime_Small_Red_13: 2812106947083656130
+      Slime_Small_Red_14: 881189057204659615
+      Slime_Small_Red_15: 1877452196363200897
+      Slime_Small_Red_16: 1740207393539567185
+      Slime_Small_Red_17: 124347389001458248
+      Slime_Small_Red_18: -804545910831815539
+      Slime_Small_Red_19: 3380173615748358297
+      Slime_Small_Red_2: -6342993341293266860
+      Slime_Small_Red_20: -1380545967273435135
+      Slime_Small_Red_3: 6024554880007859356
+      Slime_Small_Red_4: -625922362332906404
+      Slime_Small_Red_5: 3011776072680738338
+      Slime_Small_Red_6: 8296830743375527665
+      Slime_Small_Red_7: 3515779024758521501
+      Slime_Small_Red_8: -4614357263919564151
+      Slime_Small_Red_9: -3499759693977696806
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

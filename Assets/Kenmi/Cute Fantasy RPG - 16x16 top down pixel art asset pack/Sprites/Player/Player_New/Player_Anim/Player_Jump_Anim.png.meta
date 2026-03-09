@@ -784,7 +784,34 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      Player_Jump_Anim_0: 8359698783862998482
+      Player_Jump_Anim_1: -7297181261755401343
+      Player_Jump_Anim_10: -8649634268801714774
+      Player_Jump_Anim_11: 4802192187410010509
+      Player_Jump_Anim_12: -5243942043556346079
+      Player_Jump_Anim_13: -821620071213060590
+      Player_Jump_Anim_14: -2378019164381040377
+      Player_Jump_Anim_15: -3487409010736012341
+      Player_Jump_Anim_16: 5156427666549488868
+      Player_Jump_Anim_17: -5613633227752549220
+      Player_Jump_Anim_18: -8755566027331539448
+      Player_Jump_Anim_19: 676069470303613624
+      Player_Jump_Anim_2: 3282290791565133864
+      Player_Jump_Anim_20: -1202118381756862261
+      Player_Jump_Anim_21: 824862773090666460
+      Player_Jump_Anim_22: -1963945788279378125
+      Player_Jump_Anim_23: -83961361503392972
+      Player_Jump_Anim_24: 5626959717832777097
+      Player_Jump_Anim_25: -1857106104167475678
+      Player_Jump_Anim_26: -2025213147492665425
+      Player_Jump_Anim_3: 4247255935357714868
+      Player_Jump_Anim_4: -128293723490830081
+      Player_Jump_Anim_5: -7679759811326860291
+      Player_Jump_Anim_6: 7618315443774084148
+      Player_Jump_Anim_7: -7955613960915199057
+      Player_Jump_Anim_8: 9013628834500288711
+      Player_Jump_Anim_9: 5337720925386347024
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

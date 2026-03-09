@@ -634,7 +634,28 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      Slime_Medium_Pink_0: -4439855420470161935
+      Slime_Medium_Pink_1: 8303235616808748616
+      Slime_Medium_Pink_10: 7537616424926531410
+      Slime_Medium_Pink_11: 3741178418206821560
+      Slime_Medium_Pink_12: 4331639809381892243
+      Slime_Medium_Pink_13: -4831653869740908122
+      Slime_Medium_Pink_14: -8530730493493042793
+      Slime_Medium_Pink_15: 2249780212585670299
+      Slime_Medium_Pink_16: 6886640329675726085
+      Slime_Medium_Pink_17: -7806831891098217266
+      Slime_Medium_Pink_18: 2848234221457490842
+      Slime_Medium_Pink_19: -4081496094662472816
+      Slime_Medium_Pink_2: -3175802099962207524
+      Slime_Medium_Pink_20: 3450030317519190502
+      Slime_Medium_Pink_3: -5175044084999079450
+      Slime_Medium_Pink_4: 520729973124097315
+      Slime_Medium_Pink_5: 930579727504795442
+      Slime_Medium_Pink_6: -1466469602096930312
+      Slime_Medium_Pink_7: -962358295561927932
+      Slime_Medium_Pink_8: 1550439527695829070
+      Slime_Medium_Pink_9: -5118006982870973135
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

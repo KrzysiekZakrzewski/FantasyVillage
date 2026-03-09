@@ -859,7 +859,37 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      Slime_Yellow_0: -6208960221296572836
+      Slime_Yellow_1: -2523413533887305914
+      Slime_Yellow_10: 6767176078569952333
+      Slime_Yellow_11: 940446209875501400
+      Slime_Yellow_12: 5537225023344031741
+      Slime_Yellow_13: -3006429797849255778
+      Slime_Yellow_14: -8286442941468313232
+      Slime_Yellow_15: 7444868990674152409
+      Slime_Yellow_16: 5195787469750901107
+      Slime_Yellow_17: 5569862961178417664
+      Slime_Yellow_18: -8012218849886241466
+      Slime_Yellow_19: -4315531341414783252
+      Slime_Yellow_2: -4292515130265875245
+      Slime_Yellow_20: -2571410765646655924
+      Slime_Yellow_21: 3938462974917325496
+      Slime_Yellow_22: -6313133143842961698
+      Slime_Yellow_23: 2787317496104427462
+      Slime_Yellow_24: 5013090648660008073
+      Slime_Yellow_25: -1025827152669636557
+      Slime_Yellow_26: -6623643092200428683
+      Slime_Yellow_27: 2247465849039803040
+      Slime_Yellow_28: -3229116053803024721
+      Slime_Yellow_29: 5416714544794111751
+      Slime_Yellow_3: 1031323803513023949
+      Slime_Yellow_4: 4725359267382342225
+      Slime_Yellow_5: -6119682263412453045
+      Slime_Yellow_6: -8207903460055800764
+      Slime_Yellow_7: 8279742768868862191
+      Slime_Yellow_8: 804984582413611269
+      Slime_Yellow_9: 4296079533635848083
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

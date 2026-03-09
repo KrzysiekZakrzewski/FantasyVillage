@@ -809,7 +809,35 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      Player_Roll_Anim_0: 6862885433437541866
+      Player_Roll_Anim_1: -3760178481301625998
+      Player_Roll_Anim_10: 832771121978418031
+      Player_Roll_Anim_11: -1281981892466207852
+      Player_Roll_Anim_12: -2370812564113613777
+      Player_Roll_Anim_13: 4435314973337202350
+      Player_Roll_Anim_14: 5396433658075638130
+      Player_Roll_Anim_15: 3334384176507886568
+      Player_Roll_Anim_16: 501845020705251787
+      Player_Roll_Anim_17: -8924912585835422424
+      Player_Roll_Anim_18: 3459527735123977187
+      Player_Roll_Anim_19: 8998592214154091016
+      Player_Roll_Anim_2: 4750103530210117144
+      Player_Roll_Anim_20: -7517389427702772766
+      Player_Roll_Anim_21: 6999861393202531560
+      Player_Roll_Anim_22: 4409748235984000324
+      Player_Roll_Anim_23: -9015349557458564245
+      Player_Roll_Anim_24: -1354347959897017735
+      Player_Roll_Anim_25: -2870034667758141032
+      Player_Roll_Anim_26: 178029606005688690
+      Player_Roll_Anim_27: 5706283162885195551
+      Player_Roll_Anim_3: 343300792055796934
+      Player_Roll_Anim_4: 798542726370696200
+      Player_Roll_Anim_5: -1813732999009063038
+      Player_Roll_Anim_6: 965102907630245350
+      Player_Roll_Anim_7: 7633001046059101577
+      Player_Roll_Anim_8: -5550262767414232213
+      Player_Roll_Anim_9: 876781671190559975
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

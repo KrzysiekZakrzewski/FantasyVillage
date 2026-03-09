@@ -634,7 +634,28 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      Slime_Small_Yellow_0: -6443132477491542402
+      Slime_Small_Yellow_1: 3650865041872991834
+      Slime_Small_Yellow_10: -2330069947000390407
+      Slime_Small_Yellow_11: 938086784830825994
+      Slime_Small_Yellow_12: 5821616866407811812
+      Slime_Small_Yellow_13: -4694013483558794596
+      Slime_Small_Yellow_14: 1493017925068372552
+      Slime_Small_Yellow_15: 3220601404405791902
+      Slime_Small_Yellow_16: -4257752076968904367
+      Slime_Small_Yellow_17: 1333311015208373983
+      Slime_Small_Yellow_18: -4055629606794669404
+      Slime_Small_Yellow_19: 4657345689503174047
+      Slime_Small_Yellow_2: -5994846222512333458
+      Slime_Small_Yellow_20: 2128145307526344074
+      Slime_Small_Yellow_3: -7999728980785583700
+      Slime_Small_Yellow_4: -256665876427626798
+      Slime_Small_Yellow_5: 4278537904358770746
+      Slime_Small_Yellow_6: -5277302071905349807
+      Slime_Small_Yellow_7: -8373539310099976414
+      Slime_Small_Yellow_8: 895577691906452446
+      Slime_Small_Yellow_9: 4901194483995322685
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

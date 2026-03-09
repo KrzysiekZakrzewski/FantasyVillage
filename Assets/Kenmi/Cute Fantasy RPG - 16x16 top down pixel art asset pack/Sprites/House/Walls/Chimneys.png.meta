@@ -184,7 +184,10 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      Chimneys_0: -4488383201010057622
+      Chimneys_1: -3583592763064263998
+      Chimneys_2: -4033728983029737642
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

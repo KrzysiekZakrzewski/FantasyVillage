@@ -559,7 +559,25 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      Player_Push_Anim_0: -8458216747731017345
+      Player_Push_Anim_1: 6358149106421872281
+      Player_Push_Anim_10: 467676405347059725
+      Player_Push_Anim_11: 4192834514910547847
+      Player_Push_Anim_12: -6048289480027597148
+      Player_Push_Anim_13: -4104955686928211578
+      Player_Push_Anim_14: -2660415975812982786
+      Player_Push_Anim_15: -1361385766410036813
+      Player_Push_Anim_16: 8868993268425380728
+      Player_Push_Anim_17: 4386336156239394191
+      Player_Push_Anim_2: -4274521438824851899
+      Player_Push_Anim_3: -5077516682711104089
+      Player_Push_Anim_4: 7908776327700179606
+      Player_Push_Anim_5: -944607322801893974
+      Player_Push_Anim_6: -2037499465522122682
+      Player_Push_Anim_7: 8065482365492919190
+      Player_Push_Anim_8: 4540480872178552702
+      Player_Push_Anim_9: 3848018816876895387
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

@@ -859,7 +859,37 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      Slime_Blue_0: 7639681597762982896
+      Slime_Blue_1: 6528811938096087486
+      Slime_Blue_10: 8044445097638070213
+      Slime_Blue_11: -7470860205493084647
+      Slime_Blue_12: -4293446872129900813
+      Slime_Blue_13: 8023245043835416198
+      Slime_Blue_14: -5461413571053133118
+      Slime_Blue_15: 1259082564093335361
+      Slime_Blue_16: 749523195656354108
+      Slime_Blue_17: 1103795970956525434
+      Slime_Blue_18: 8556772561591502260
+      Slime_Blue_19: -7065049301449116155
+      Slime_Blue_2: -1476896919502724593
+      Slime_Blue_20: -138318871022263386
+      Slime_Blue_21: -6470117354066419549
+      Slime_Blue_22: -6865814111336595914
+      Slime_Blue_23: 9122222814970498881
+      Slime_Blue_24: 2613149752353647445
+      Slime_Blue_25: 8948696683377394058
+      Slime_Blue_26: -8250308352817796770
+      Slime_Blue_27: -8411394133143669232
+      Slime_Blue_28: 309784705995226998
+      Slime_Blue_29: 4118769248494524315
+      Slime_Blue_3: -1743398219589458532
+      Slime_Blue_4: 6765950002885398199
+      Slime_Blue_5: -5417929705734930204
+      Slime_Blue_6: -3825716170058012900
+      Slime_Blue_7: -205463525313029495
+      Slime_Blue_8: -7084675858523021944
+      Slime_Blue_9: -7469747125926313474
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
